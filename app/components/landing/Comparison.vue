@@ -3,7 +3,7 @@
     <div class="text-center mb-14">
       <h2 class="text-4xl font-bold text-white mb-3">Less is more</h2>
       <p class="text-[var(--color-text-dim)] text-base max-w-[480px] mx-auto">
-        Most database clients ship an entire browser or a Java runtime. Dibiku ships just what you need.
+        Most database clients are slow and heavy. Dibiku ships just what you need — nothing more.
       </p>
     </div>
 
@@ -40,7 +40,7 @@
     <!-- Bottom tagline -->
     <div class="text-center">
       <p class="text-sm text-[var(--color-text-muted)]">
-        Built with <span class="text-[var(--color-accent)]">Tauri 2.0 + Rust</span> — native webview, no bundled browser, no JVM.
+        Engineered to be <span class="text-[var(--color-accent)]">fast, light, and native</span> — no hidden bloat eating your resources.
       </p>
     </div>
   </section>
@@ -53,8 +53,8 @@ const METRICS = [
     note: 'Smaller app = faster install, less disk',
     bars: [
       { name: 'Dibiku', value: '~15 MB', percent: 5, highlight: true },
-      { name: 'Electron-based', value: '~200 MB', percent: 45, highlight: false },
-      { name: 'Java-based', value: '~500 MB', percent: 100, highlight: false },
+      { name: 'Typical alternatives', value: '~200 MB', percent: 45, highlight: false },
+      { name: 'Heavy clients', value: '~500 MB', percent: 100, highlight: false },
     ],
   },
   {
@@ -62,8 +62,8 @@ const METRICS = [
     note: 'Measured idle with one connection open',
     bars: [
       { name: 'Dibiku', value: '~80 MB', percent: 8, highlight: true },
-      { name: 'Electron-based', value: '~300 MB', percent: 35, highlight: false },
-      { name: 'Java-based', value: '~900 MB', percent: 100, highlight: false },
+      { name: 'Typical alternatives', value: '~300 MB', percent: 35, highlight: false },
+      { name: 'Heavy clients', value: '~900 MB', percent: 100, highlight: false },
     ],
   },
   {
@@ -71,8 +71,8 @@ const METRICS = [
     note: 'Cold start to query-ready',
     bars: [
       { name: 'Dibiku', value: '< 2s', percent: 10, highlight: true },
-      { name: 'Electron-based', value: '~5s', percent: 45, highlight: false },
-      { name: 'Java-based', value: '~12s', percent: 100, highlight: false },
+      { name: 'Typical alternatives', value: '~5s', percent: 45, highlight: false },
+      { name: 'Heavy clients', value: '~12s', percent: 100, highlight: false },
     ],
   },
 ] as const
