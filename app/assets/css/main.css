@@ -1,0 +1,51 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-bg-primary: #0a0a0b;
+  --color-bg-card: rgba(255, 255, 255, 0.02);
+  --color-bg-card-hover: rgba(255, 255, 255, 0.04);
+  --color-border-subtle: rgba(255, 255, 255, 0.06);
+  --color-border-hover: rgba(0, 120, 212, 0.3);
+  --color-accent: #0078d4;
+  --color-accent-light: #00b4d8;
+  --color-success: #4ec9b0;
+  --color-text-primary: #ffffff;
+  --color-text-body: #e0e0e0;
+  --color-text-muted: #969696;
+  --color-text-dim: #6e6e6e;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg-primary);
+  color: var(--color-text-body);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #0078d4, #00b4d8, #4ec9b0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease infinite;
+}
+
+.glass-nav {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(10, 10, 11, 0.8);
+}
