@@ -1,9 +1,9 @@
 <template>
   <section class="max-w-[1100px] mx-auto px-6 pt-24 pb-20" id="features">
     <div class="text-center mb-16">
-      <h2 class="text-4xl font-bold text-white mb-3">Built different</h2>
+      <h2 class="text-4xl font-bold text-white mb-3">Why developers switch</h2>
       <p class="text-[var(--color-text-dim)] text-base max-w-[480px] mx-auto">
-        Not another Electron app. Dibiku is compiled Rust — native speed, tiny footprint, real security.
+        No Java runtime. No bundled Chromium. Just a native app that launches instantly and stays out of your way.
       </p>
     </div>
 

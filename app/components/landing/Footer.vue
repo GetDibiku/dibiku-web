@@ -5,7 +5,7 @@
         <div class="w-6 h-6 rounded-md bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-light)] flex items-center justify-center text-white text-[10px] font-bold">
           Di
         </div>
-        <span class="text-sm text-[var(--color-text-dim)]">Dibiku — Database client for humans</span>
+        <span class="text-sm text-[var(--color-text-dim)]">&copy; 2026 Dibiku. The lightweight database client.</span>
       </div>
 
       <div class="flex gap-6 text-sm">

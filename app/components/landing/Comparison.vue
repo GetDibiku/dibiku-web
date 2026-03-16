@@ -1,8 +1,8 @@
 <template>
   <section class="max-w-[1100px] mx-auto px-6 pt-20 pb-20" id="compare">
     <div class="text-center mb-12">
-      <h2 class="text-4xl font-bold text-white mb-3">How we compare</h2>
-      <p class="text-[var(--color-text-dim)] text-base">Size matters. Speed matters. Your RAM matters.</p>
+      <h2 class="text-4xl font-bold text-white mb-3">See the difference</h2>
+      <p class="text-[var(--color-text-dim)] text-base">Same job, fraction of the resources. Your laptop will thank you.</p>
     </div>
 
     <div class="rounded-2xl overflow-hidden border border-[var(--color-border-subtle)]">

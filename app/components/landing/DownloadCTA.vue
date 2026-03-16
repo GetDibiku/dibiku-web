@@ -1,8 +1,8 @@
 <template>
   <section id="download" class="border-t border-white/[0.06] py-20 text-center px-6">
-    <h2 class="text-4xl font-bold text-white mb-3">Ready to try?</h2>
-    <p class="text-[var(--color-text-dim)] text-base max-w-[400px] mx-auto mb-9">
-      Download Dibiku and connect to your first database in under 30 seconds.
+    <h2 class="text-4xl font-bold text-white mb-3">Try it now — it's free</h2>
+    <p class="text-[var(--color-text-dim)] text-base max-w-[440px] mx-auto mb-9">
+      Download, install, and connect to your first database in under 30 seconds. No account required.
     </p>
 
     <!-- Primary downloads -->

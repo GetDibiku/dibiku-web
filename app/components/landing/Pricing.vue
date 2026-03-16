@@ -1,8 +1,8 @@
 <template>
   <section class="max-w-[1100px] mx-auto px-6 pt-20 pb-24" id="pricing">
     <div class="text-center mb-12">
-      <h2 class="text-4xl font-bold text-white mb-3">Simple pricing</h2>
-      <p class="text-[var(--color-text-dim)] text-base">Free forever for personal use. Pro for power users.</p>
+      <h2 class="text-4xl font-bold text-white mb-3">Simple, honest pricing</h2>
+      <p class="text-[var(--color-text-dim)] text-base">Free forever for personal use. Upgrade only when you need more.</p>
     </div>
 
     <div class="grid md:grid-cols-2 gap-5 max-w-[700px] mx-auto">

@@ -8,13 +8,13 @@
 
     <!-- Headline -->
     <h1 class="text-[clamp(36px,5vw,56px)] font-bold leading-[1.1] tracking-tight text-white mb-5">
-      The database client<br />
-      that <span class="gradient-text">respects your time</span>
+      Your database,<br />
+      <span class="gradient-text">without the bloat</span>
     </h1>
 
     <!-- Subtitle -->
-    <p class="text-lg text-[var(--color-text-muted)] max-w-[540px] mx-auto mb-9 leading-relaxed">
-      Fast, lightweight, and keyboard-first. Connect to MySQL, PostgreSQL, Redis, and SQLite — all from a 15MB app built with Rust.
+    <p class="text-lg text-[var(--color-text-muted)] max-w-[560px] mx-auto mb-9 leading-relaxed">
+      A 15MB desktop client that starts in under 2 seconds. Connect to MySQL, PostgreSQL, SQLite, and Redis — powered by Rust, not Electron.
     </p>
 
     <!-- CTA Buttons -->
