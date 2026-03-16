@@ -38,13 +38,6 @@ export const FEATURES = [
   },
 ] as const
 
-export const COMPARISONS = [
-  { name: 'Dibiku', price: 'Free / $8/mo', size: '~15 MB', ram: '~80 MB', speed: 'Instant', highlight: true },
-  { name: 'Client T', price: '$89', size: '~30 MB', ram: '~120 MB', speed: 'Fast', highlight: false },
-  { name: 'Client D', price: 'Free / $21/mo', size: '~400 MB', ram: '~800 MB', speed: 'Slow', highlight: false },
-  { name: 'Client G', price: '$25/mo', size: '~900 MB', ram: '~1.2 GB', speed: 'Slow', highlight: false },
-] as const
-
 export const PRICING = [
   {
     name: 'Free',
