@@ -1,11 +1,11 @@
 <template>
-  <div class="rounded-lg overflow-hidden border border-white/[0.08] text-xs font-mono">
+  <div class="rounded-lg overflow-hidden border border-white/[0.08] text-xs font-mono text-left">
     <!-- Header -->
     <div class="flex bg-white/[0.04] border-b border-white/[0.08]">
       <div
         v-for="col in columns"
         :key="col.name"
-        class="px-3 py-2 text-[var(--color-text-muted)] font-medium border-r border-white/[0.05]"
+        class="px-3 py-2 text-left text-[var(--color-text-muted)] font-medium border-r border-white/[0.05]"
         :class="col.wide ? 'flex-[2]' : 'flex-1'"
       >
         {{ col.name }}
@@ -22,7 +22,7 @@
       <div
         v-for="(cell, ci) in row"
         :key="ci"
-        class="px-3 py-1.5 border-r border-white/[0.05] truncate"
+        class="px-3 py-1.5 text-left border-r border-white/[0.05] truncate"
         :class="[
           columns[ci]?.wide ? 'flex-[2]' : 'flex-1',
           cell.color,

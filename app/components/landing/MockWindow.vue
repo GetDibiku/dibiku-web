@@ -11,7 +11,7 @@
     </div>
 
     <!-- Body -->
-    <div class="flex p-5 gap-4">
+    <div class="flex p-5 gap-4 text-left">
       <!-- Sidebar -->
       <div class="w-[140px] border-r border-white/[0.06] pr-3 shrink-0 hidden sm:block">
         <div class="text-[10px] text-[var(--color-text-dim)] uppercase tracking-widest mb-1.5">Tables</div>
