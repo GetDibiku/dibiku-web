@@ -91,12 +91,52 @@
         </div>
       </div>
     </div>
+
+    <!-- Detailed features grid -->
+    <div class="mt-16 pt-16 border-t border-white/[0.06]">
+      <h3 class="text-xl font-semibold text-white text-center mb-10">Everything under the hood</h3>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-5">
+        <div v-for="item in DETAIL_FEATURES" :key="item" class="flex items-start gap-3">
+          <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--color-success)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+          <span class="text-sm text-[var(--color-text-muted)]">{{ item }}</span>
+        </div>
+      </div>
+    </div>
   </section>
 </template>
 
 <script setup lang="ts">
 import { FEATURES } from '~/config/landing'
 import FeatureIcon from './FeatureIcon.vue'
+
+const DETAIL_FEATURES = [
+  'CodeMirror SQL editor',
+  'Autocomplete for tables & columns',
+  'Multi-statement execution',
+  'Built-in SQL formatter',
+  'Virtual scrolling data grid',
+  'Inline cell editing',
+  'ERD / relationship diagrams',
+  'Table structure viewer',
+  'Slow query detection',
+  'Data generator for testing',
+  'CSV, JSON & SQL export',
+  'CSV import',
+  'Query history per connection',
+  'Saved queries library',
+  'Multi-connection tabs',
+  'Multi-database sidebar',
+  'Cmd+P command palette',
+  '30+ keyboard shortcuts',
+  'SSH tunnel support',
+  'Connection grouping',
+  'Connection import/export',
+  'Redis type-specific viewers',
+  'Dark & light themes',
+  'Auto-update system',
+]
 </script>
 
 <style scoped>

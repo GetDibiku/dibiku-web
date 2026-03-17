@@ -14,7 +14,7 @@
 
     <!-- Subtitle -->
     <p class="text-lg text-[var(--color-text-muted)] max-w-[560px] mx-auto mb-9 leading-relaxed">
-      A lightning-fast desktop client that starts in under 2 seconds. Connect to MySQL, PostgreSQL, SQLite, and Redis — no bloat, just speed.
+      A lightning-fast desktop client with a full SQL editor, virtual scrolling data grid, ERD viewer, and 30+ keyboard shortcuts. MySQL, PostgreSQL, SQLite, and Redis — all in one app.
     </p>
 
     <!-- CTA Buttons -->

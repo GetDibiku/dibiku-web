@@ -3,7 +3,7 @@
     <div class="text-center mb-14">
       <h2 class="text-4xl font-bold text-white mb-3">Less is more</h2>
       <p class="text-[var(--color-text-dim)] text-base max-w-[480px] mx-auto">
-        Most database clients are slow and heavy. Dibiku ships just what you need — nothing more.
+        Full-featured doesn't mean heavy. Dibiku packs an SQL editor, ERD viewer, data grid, and more — while using a fraction of the resources.
       </p>
     </div>
 
