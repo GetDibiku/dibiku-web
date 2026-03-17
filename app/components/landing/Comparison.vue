@@ -66,5 +66,14 @@ const METRICS = [
       { name: 'Heavy clients', value: '~12s', percent: 100, highlight: false },
     ],
   },
+  {
+    label: 'Scroll Performance',
+    note: 'Rendering 100K+ rows with virtual scroll',
+    bars: [
+      { name: 'Dibiku', value: '60 fps', percent: 100, highlight: true },
+      { name: 'Typical alternatives', value: '~30 fps', percent: 50, highlight: false },
+      { name: 'Heavy clients', value: '~15 fps', percent: 25, highlight: false },
+    ],
+  },
 ] as const
 </script>
