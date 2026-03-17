@@ -17,10 +17,10 @@ export const FEATURES = [
     icon: 'zap',
   },
   {
-    title: 'Tiny footprint',
-    desc: 'Just 15MB — smaller than most app updates. No hidden downloads, no waiting. Install once and you\'re done.',
-    stat: '15 MB',
-    statLabel: 'total app size',
+    title: 'Light on resources',
+    desc: 'Uses less than 80MB of RAM — even with large result sets. No background processes, no memory leaks. Your machine stays fast.',
+    stat: '< 80',
+    statLabel: 'MB RAM usage',
     gradient: ['#7B3FA0', '#c084fc'],
     icon: 'feather',
   },
@@ -101,7 +101,7 @@ export const PRICING = [
 ] as const
 
 export const STATS = [
-  { value: 15, suffix: 'MB', label: 'App size' },
+  { value: 4, suffix: '+', label: 'DB engines' },
   { value: 2, suffix: 's', label: 'Cold start' },
   { value: 60, suffix: 'fps', label: 'Scroll perf' },
   { value: 80, suffix: 'MB', label: 'RAM usage' },

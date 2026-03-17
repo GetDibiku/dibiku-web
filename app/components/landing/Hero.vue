@@ -14,7 +14,7 @@
 
     <!-- Subtitle -->
     <p class="text-lg text-[var(--color-text-muted)] max-w-[560px] mx-auto mb-9 leading-relaxed">
-      A 15MB desktop client that starts in under 2 seconds. Connect to MySQL, PostgreSQL, SQLite, and Redis — blazing fast and lightweight by design.
+      A lightning-fast desktop client that starts in under 2 seconds. Connect to MySQL, PostgreSQL, SQLite, and Redis — no bloat, just speed.
     </p>
 
     <!-- CTA Buttons -->

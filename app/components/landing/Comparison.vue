@@ -49,15 +49,6 @@
 <script setup lang="ts">
 const METRICS = [
   {
-    label: 'App Size',
-    note: 'Smaller app = faster install, less disk',
-    bars: [
-      { name: 'Dibiku', value: '~15 MB', percent: 5, highlight: true },
-      { name: 'Typical alternatives', value: '~200 MB', percent: 45, highlight: false },
-      { name: 'Heavy clients', value: '~500 MB', percent: 100, highlight: false },
-    ],
-  },
-  {
     label: 'Memory Usage',
     note: 'Measured idle with one connection open',
     bars: [

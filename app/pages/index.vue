@@ -20,4 +20,25 @@ import Comparison from '~/components/landing/Comparison.vue'
 import Pricing from '~/components/landing/Pricing.vue'
 import DownloadCTA from '~/components/landing/DownloadCTA.vue'
 import Footer from '~/components/landing/Footer.vue'
+
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'SoftwareApplication',
+        name: 'Dibiku',
+        description: 'Fast, lightweight database client for MySQL, PostgreSQL, Redis, and SQLite.',
+        applicationCategory: 'DeveloperApplication',
+        operatingSystem: 'macOS, Windows, Linux',
+        offers: [
+          { '@type': 'Offer', price: '0', priceCurrency: 'USD', name: 'Free' },
+          { '@type': 'Offer', price: '8', priceCurrency: 'USD', name: 'Pro', billingIncrement: 'P1M' },
+        ],
+        url: 'https://dibiku.id',
+      }),
+    },
+  ],
+})
 </script>
