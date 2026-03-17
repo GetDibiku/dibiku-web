@@ -14,6 +14,7 @@
         <a href="#features" class="text-[var(--color-text-muted)] hover:text-white text-sm transition-colors no-underline">Features</a>
         <a href="#compare" class="text-[var(--color-text-muted)] hover:text-white text-sm transition-colors no-underline">Compare</a>
         <a href="#pricing" class="text-[var(--color-text-muted)] hover:text-white text-sm transition-colors no-underline">Pricing</a>
+        <a href="/changelog" class="text-[var(--color-text-muted)] hover:text-white text-sm transition-colors no-underline">Changelog</a>
         <a
           href="#download"
           class="px-5 py-2 bg-gradient-to-r from-[var(--color-accent)] to-[#0090e0] text-white text-sm font-semibold rounded-xl hover:opacity-90 transition-opacity no-underline"

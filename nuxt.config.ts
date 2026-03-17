@@ -47,6 +47,7 @@ export default defineNuxtConfig({
 
   routeRules: {
     '/': { prerender: true },
+    '/changelog': { prerender: true },
   },
 
   nitro: {
