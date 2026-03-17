@@ -92,15 +92,41 @@
       </div>
     </div>
 
-    <!-- Detailed features grid -->
-    <div class="mt-16 pt-16 border-t border-white/[0.06]">
-      <h3 class="text-xl font-semibold text-white text-center mb-10">Everything under the hood</h3>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-5">
-        <div v-for="item in DETAIL_FEATURES" :key="item" class="flex items-start gap-3">
-          <svg class="w-4 h-4 mt-0.5 shrink-0 text-[var(--color-success)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="20 6 9 17 4 12" />
-          </svg>
-          <span class="text-sm text-[var(--color-text-muted)]">{{ item }}</span>
+    <!-- Detailed features - categorized cards -->
+    <div class="mt-20 pt-16 border-t border-white/[0.06]">
+      <div class="text-center mb-14">
+        <h3 class="text-2xl font-bold text-white mb-3">Under the hood</h3>
+        <p class="text-sm text-[var(--color-text-dim)] max-w-[400px] mx-auto">Every feature designed to save you time</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div
+          v-for="category in DETAIL_CATEGORIES"
+          :key="category.title"
+          class="rounded-2xl border border-white/[0.06] bg-white/[0.015] p-6 hover:border-white/[0.1] transition-all duration-300"
+        >
+          <!-- Category header -->
+          <div class="flex items-center gap-3 mb-5">
+            <div
+              class="w-9 h-9 rounded-lg flex items-center justify-center text-lg"
+              :style="{ background: category.color + '15' }"
+            >
+              <span>{{ category.emoji }}</span>
+            </div>
+            <h4 class="text-sm font-semibold text-white uppercase tracking-wider">{{ category.title }}</h4>
+          </div>
+
+          <!-- Feature items -->
+          <div class="space-y-2.5">
+            <div
+              v-for="item in category.items"
+              :key="item"
+              class="flex items-center gap-2.5"
+            >
+              <div class="w-1.5 h-1.5 rounded-full shrink-0" :style="{ background: category.color + '80' }" />
+              <span class="text-[13px] text-[var(--color-text-muted)] leading-snug">{{ item }}</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -111,31 +137,85 @@
 import { FEATURES } from '~/config/landing'
 import FeatureIcon from './FeatureIcon.vue'
 
-const DETAIL_FEATURES = [
-  'CodeMirror SQL editor',
-  'Autocomplete for tables & columns',
-  'Multi-statement execution',
-  'Built-in SQL formatter',
-  'Virtual scrolling data grid',
-  'Inline cell editing',
-  'ERD / relationship diagrams',
-  'Table structure viewer',
-  'Slow query detection',
-  'Data generator for testing',
-  'CSV, JSON & SQL export',
-  'CSV import',
-  'Query history per connection',
-  'Saved queries library',
-  'Multi-connection tabs',
-  'Multi-database sidebar',
-  'Cmd+P command palette',
-  '30+ keyboard shortcuts',
-  'SSH tunnel support',
-  'Connection grouping',
-  'Connection import/export',
-  'Redis type-specific viewers',
-  'Dark & light themes',
-  'Auto-update system',
+const DETAIL_CATEGORIES = [
+  {
+    title: 'SQL Editor',
+    emoji: '✏️',
+    color: '#60a5fa',
+    items: [
+      'CodeMirror 6 with syntax highlighting',
+      'Schema-aware autocomplete',
+      'Multi-statement execution with tabs',
+      'SQL formatter (Cmd+Shift+F)',
+      'EXPLAIN query visualizer',
+      'Saved queries & history',
+    ],
+  },
+  {
+    title: 'Data Grid',
+    emoji: '📊',
+    color: '#4ec9b0',
+    items: [
+      'Virtual scrolling — millions of rows',
+      'Click-to-edit inline cells',
+      'Column sort, resize & reorder',
+      'Multi-row select & batch delete',
+      'Server-side pagination',
+      'Search with match highlighting',
+    ],
+  },
+  {
+    title: 'Database Tools',
+    emoji: '🛠️',
+    color: '#e6922e',
+    items: [
+      'ERD / relationship diagrams',
+      'Table structure inspector',
+      'Slow query detection',
+      'Fake data generator',
+      'Create / duplicate / drop tables',
+      'Backup & restore (.sql)',
+    ],
+  },
+  {
+    title: 'Import & Export',
+    emoji: '📦',
+    color: '#c586c0',
+    items: [
+      'Export as CSV, JSON or SQL',
+      'Import from CSV with mapping',
+      'Copy rows as PHP, Python, Go, etc.',
+      'Copy CREATE TABLE statements',
+      'Connection import/export (JSON)',
+      'Connection string import',
+    ],
+  },
+  {
+    title: 'Connections',
+    emoji: '🔌',
+    color: '#0078d4',
+    items: [
+      'Multi-connection tabs',
+      'Multi-database sidebar',
+      'SSH tunnel (password + key)',
+      'SSL/TLS with certificate files',
+      'OS keychain credentials',
+      'Connection grouping & colors',
+    ],
+  },
+  {
+    title: 'Experience',
+    emoji: '✨',
+    color: '#f44747',
+    items: [
+      '36 keyboard shortcuts',
+      'Cmd+P command palette',
+      'Dark & light themes',
+      'Pin favorite tables',
+      'Auto-update system',
+      'Settings & preferences',
+    ],
+  },
 ]
 </script>
 
