@@ -34,7 +34,7 @@
       <div class="space-y-12">
         <!-- Database Support -->
         <section>
-          <h2 class="changelog-heading">Database Support</h2>
+          <h2 class="changelog-heading">Database Support <span class="changelog-date">March 16, 2026</span></h2>
           <ul class="changelog-list">
             <li>MySQL driver with connection pooling and SSL support</li>
             <li>PostgreSQL driver with SSL mode configuration</li>
@@ -47,7 +47,7 @@
 
         <!-- Connection Manager -->
         <section>
-          <h2 class="changelog-heading">Connection Manager</h2>
+          <h2 class="changelog-heading">Connection Manager <span class="changelog-date">March 16, 2026</span></h2>
           <ul class="changelog-list">
             <li>Create, edit, duplicate, and delete connections</li>
             <li>Group connections into folders with drag-and-drop</li>
@@ -61,7 +61,7 @@
 
         <!-- Data Viewer -->
         <section>
-          <h2 class="changelog-heading">Data Viewer</h2>
+          <h2 class="changelog-heading">Data Viewer <span class="changelog-date">March 16, 2026</span></h2>
           <ul class="changelog-list">
             <li>Virtual scrolling — render millions of rows at 60fps</li>
             <li>Multi-table tabs — open multiple tables side by side</li>
@@ -79,7 +79,7 @@
 
         <!-- Inline Editing -->
         <section>
-          <h2 class="changelog-heading">Inline Editing</h2>
+          <h2 class="changelog-heading">Inline Editing <span class="changelog-date">March 16, 2026</span></h2>
           <ul class="changelog-list">
             <li>Click any cell to edit in place</li>
             <li>Tab / Shift+Tab to navigate between cells while editing</li>
@@ -94,7 +94,7 @@
 
         <!-- Query Editor -->
         <section>
-          <h2 class="changelog-heading">Query Editor</h2>
+          <h2 class="changelog-heading">Query Editor <span class="changelog-date">March 16, 2026</span></h2>
           <ul class="changelog-list">
             <li>CodeMirror 6 editor with SQL syntax highlighting</li>
             <li>Autocomplete for table names, column names, and SQL keywords</li>
@@ -109,7 +109,7 @@
 
         <!-- Query History -->
         <section>
-          <h2 class="changelog-heading">Query History</h2>
+          <h2 class="changelog-heading">Query History <span class="changelog-date">March 16, 2026</span></h2>
           <ul class="changelog-list">
             <li>All queries automatically saved (up to 500 entries)</li>
             <li>Persisted to disk — survives app restarts</li>
@@ -122,7 +122,7 @@
 
         <!-- Import & Export -->
         <section>
-          <h2 class="changelog-heading">Import &amp; Export</h2>
+          <h2 class="changelog-heading">Import &amp; Export <span class="changelog-date">March 16, 2026</span></h2>
           <ul class="changelog-list">
             <li>Export current view as CSV, JSON, or SQL INSERT statements</li>
             <li>Export entire table via right-click context menu (fetches all rows)</li>
@@ -135,7 +135,7 @@
 
         <!-- Table Management -->
         <section>
-          <h2 class="changelog-heading">Table Management</h2>
+          <h2 class="changelog-heading">Table Management <span class="changelog-date">March 17, 2026</span></h2>
           <ul class="changelog-list">
             <li>Table structure viewer — columns, indexes, primary keys</li>
             <li>Right-click context menu: Copy Name, Copy SELECT, Copy INSERT, Copy CREATE TABLE</li>
@@ -149,7 +149,7 @@
 
         <!-- UI & Theme -->
         <section>
-          <h2 class="changelog-heading">UI &amp; Theme</h2>
+          <h2 class="changelog-heading">UI &amp; Theme <span class="changelog-date">March 16, 2026</span></h2>
           <ul class="changelog-list">
             <li>Dark theme (VS Code-inspired) and Light theme</li>
             <li>Theme toggle with persistence</li>
@@ -164,7 +164,7 @@
 
         <!-- Keyboard Shortcuts -->
         <section>
-          <h2 class="changelog-heading">Keyboard Shortcuts (34+)</h2>
+          <h2 class="changelog-heading">Keyboard Shortcuts (36) <span class="changelog-date">March 17, 2026</span></h2>
           <div class="grid sm:grid-cols-2 gap-x-8 gap-y-1 mt-4">
             <div v-for="s in shortcuts" :key="s.keys" class="flex items-center justify-between py-1.5 border-b border-white/[0.04]">
               <span class="text-sm text-[var(--color-text-muted)]">{{ s.desc }}</span>
@@ -237,6 +237,15 @@ const shortcuts = [
   padding-bottom: 8px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   margin-bottom: 12px;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.changelog-date {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--color-text-dim);
 }
 
 .changelog-list {
