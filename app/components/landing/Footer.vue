@@ -11,9 +11,6 @@
       <div class="flex gap-6 text-sm">
         <a href="/changelog" class="text-[var(--color-text-muted)] hover:text-white transition-colors no-underline">Changelog</a>
         <a href="#" class="text-[var(--color-text-muted)] hover:text-white transition-colors no-underline">Docs</a>
-        <a href="#" class="text-[var(--color-text-muted)] hover:text-white transition-colors no-underline">GitHub</a>
-        <a href="#" class="text-[var(--color-text-muted)] hover:text-white transition-colors no-underline">Twitter</a>
-        <a href="#" class="text-[var(--color-text-muted)] hover:text-white transition-colors no-underline">Discord</a>
       </div>
     </div>
   </footer>
