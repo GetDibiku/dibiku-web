@@ -92,9 +92,9 @@
       </div>
     </div>
 
-    <!-- Under the hood — bento grid -->
+    <!-- Under the hood — tabbed showcase -->
     <div class="mt-24 pt-20 border-t border-white/[0.06]">
-      <div class="text-center mb-16">
+      <div class="text-center mb-14">
         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] text-sm text-[var(--color-text-muted)] mb-5">
           Under the hood
         </div>
@@ -102,74 +102,70 @@
           Packed with power,<br />
           <span class="gradient-text">designed for speed</span>
         </h3>
-        <p class="text-sm text-[var(--color-text-dim)] max-w-[440px] mx-auto leading-relaxed">Every detail crafted to keep you in the flow. Here's what's inside.</p>
+        <p class="text-sm text-[var(--color-text-dim)] max-w-[440px] mx-auto leading-relaxed">Every detail crafted to keep you in the flow.</p>
       </div>
 
-      <!-- Bento grid -->
-      <div class="bento-grid">
-        <div
-          v-for="(cat, ci) in DETAIL_CATEGORIES"
-          :key="cat.title"
-          class="bento-card group"
-          :class="ci === 0 ? 'bento-wide' : ''"
-        >
-          <!-- Gradient accent line at top -->
-          <div class="h-[2px] rounded-t-2xl" :style="{ background: `linear-gradient(90deg, ${cat.color}, ${cat.color}40)` }" />
+      <!-- Category tabs -->
+      <div class="flex justify-center mb-10">
+        <div class="inline-flex gap-1 p-1 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+          <button
+            v-for="(cat, ci) in DETAIL_CATEGORIES"
+            :key="cat.title"
+            type="button"
+            @click.prevent="setCategory(ci)"
+            class="hood-tab"
+            :class="activeCategory === ci ? 'hood-tab-active' : ''"
+          >
+            <span class="text-base">{{ cat.emoji }}</span>
+            <span class="hidden sm:inline">{{ cat.title }}</span>
+          </button>
+        </div>
+      </div>
 
-          <div class="p-7">
-            <!-- Header -->
-            <div class="flex items-center gap-3 mb-6">
+      <!-- Active category content -->
+      <div class="max-w-[900px] mx-auto">
+        <div :key="activeCategory" class="hood-panel">
+          <!-- Left: info -->
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-3 mb-2">
               <div
-                class="w-10 h-10 rounded-xl flex items-center justify-center text-xl transition-transform duration-300 group-hover:scale-110"
-                :style="{ background: `linear-gradient(135deg, ${cat.color}20, ${cat.color}08)` }"
-              >
-                {{ cat.emoji }}
-              </div>
+                class="w-12 h-12 rounded-2xl flex items-center justify-center text-2xl"
+                :style="{ background: `linear-gradient(135deg, ${activeCat.color}18, ${activeCat.color}06)`, boxShadow: `0 0 24px ${activeCat.color}10` }"
+              >{{ activeCat.emoji }}</div>
               <div>
-                <h4 class="text-[15px] font-semibold text-white">{{ cat.title }}</h4>
-                <p class="text-[11px] text-[var(--color-text-dim)]">{{ cat.items.length }} features</p>
+                <h4 class="text-xl font-bold text-white">{{ activeCat.title }}</h4>
+                <p class="text-xs text-[var(--color-text-dim)]">{{ activeCat.desc }}</p>
               </div>
             </div>
 
-            <!-- Items with staggered animation -->
-            <div class="space-y-0">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-0 mt-6">
               <div
-                v-for="(item, ii) in cat.items"
+                v-for="item in activeCat.items"
                 :key="item"
-                class="bento-item flex items-center gap-3 py-2 border-b border-white/[0.03] last:border-0"
+                class="hood-feature-row"
               >
-                <svg class="w-3.5 h-3.5 shrink-0 transition-colors duration-200" :style="{ color: cat.color + '60' }" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span class="text-[13px] text-[var(--color-text-muted)] group-hover:text-[var(--color-text-body)] transition-colors duration-300">{{ item }}</span>
+                <div class="hood-dot" :style="{ background: activeCat.color }" />
+                <span>{{ item }}</span>
               </div>
+            </div>
+          </div>
+
+          <!-- Right: visual -->
+          <div class="hood-visual" :style="{ borderColor: activeCat.color + '20' }">
+            <div class="hood-visual-inner" :style="{ background: `radial-gradient(circle at 50% 40%, ${activeCat.color}12, transparent 70%)` }">
+              <div class="text-5xl mb-3">{{ activeCat.emoji }}</div>
+              <div class="text-sm font-semibold text-white">{{ activeCat.items.length }}</div>
+              <div class="text-[10px] text-[var(--color-text-dim)] uppercase tracking-widest">features</div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Total count bar -->
-      <div class="mt-10 flex justify-center">
-        <div class="inline-flex items-center gap-6 px-8 py-3 rounded-full bg-white/[0.03] border border-white/[0.06]">
-          <div class="text-center">
-            <div class="text-lg font-bold text-white">36+</div>
-            <div class="text-[10px] text-[var(--color-text-dim)] uppercase tracking-wider">Features</div>
-          </div>
-          <div class="w-px h-8 bg-white/[0.06]" />
-          <div class="text-center">
-            <div class="text-lg font-bold text-white">36</div>
-            <div class="text-[10px] text-[var(--color-text-dim)] uppercase tracking-wider">Shortcuts</div>
-          </div>
-          <div class="w-px h-8 bg-white/[0.06]" />
-          <div class="text-center">
-            <div class="text-lg font-bold text-white">4</div>
-            <div class="text-[10px] text-[var(--color-text-dim)] uppercase tracking-wider">Engines</div>
-          </div>
-          <div class="w-px h-8 bg-white/[0.06]" />
-          <div class="text-center">
-            <div class="text-lg font-bold text-white">6</div>
-            <div class="text-[10px] text-[var(--color-text-dim)] uppercase tracking-wider">Export formats</div>
-          </div>
+      <!-- Stats strip -->
+      <div class="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-[700px] mx-auto">
+        <div v-for="stat in HOOD_STATS" :key="stat.label" class="hood-stat">
+          <div class="text-2xl font-extrabold text-white">{{ stat.value }}</div>
+          <div class="text-[11px] text-[var(--color-text-dim)] mt-0.5">{{ stat.label }}</div>
         </div>
       </div>
     </div>
@@ -177,86 +173,118 @@
 </template>
 
 <script setup lang="ts">
+import { ref, computed } from 'vue'
 import { FEATURES } from '~/config/landing'
 import FeatureIcon from './FeatureIcon.vue'
+
+const activeCategory = ref(0)
+
+const activeCat = computed(() => DETAIL_CATEGORIES[activeCategory.value])
+
+function setCategory(index: number) {
+  activeCategory.value = index
+}
+
+const HOOD_STATS = [
+  { value: '36+', label: 'Features' },
+  { value: '36', label: 'Keyboard shortcuts' },
+  { value: '4', label: 'Database engines' },
+  { value: '6', label: 'Export formats' },
+]
 
 const DETAIL_CATEGORIES = [
   {
     title: 'SQL Editor',
     emoji: '✏️',
     color: '#60a5fa',
+    desc: 'A full IDE-grade editor right in your database client',
     items: [
       'CodeMirror 6 with syntax highlighting',
       'Schema-aware autocomplete',
       'Multi-statement execution with tabs',
       'SQL formatter (Cmd+Shift+F)',
       'EXPLAIN query visualizer',
-      'Saved queries & history',
+      'Saved queries & query history',
+      'Query snippets per engine',
+      'Editor auto-save to localStorage',
     ],
   },
   {
     title: 'Data Grid',
     emoji: '📊',
     color: '#4ec9b0',
+    desc: 'Spreadsheet-like editing for your database',
     items: [
       'Virtual scrolling — millions of rows',
       'Click-to-edit inline cells',
       'Column sort, resize & reorder',
-      'Multi-row select & batch delete',
+      'Sticky first column',
+      'Multi-row select & drag-to-select',
       'Server-side pagination',
       'Search with match highlighting',
+      'Cmd+C copy / Cmd+V paste rows',
     ],
   },
   {
     title: 'Database Tools',
     emoji: '🛠️',
     color: '#e6922e',
+    desc: 'Everything you need to manage your database',
     items: [
-      'ERD / relationship diagrams',
+      'Foreign key viewer & navigation',
       'Table structure inspector',
-      'Slow query detection',
-      'Fake data generator',
+      'Column statistics on right-click',
+      'Row comparison (select 2 rows)',
       'Create / duplicate / drop tables',
       'Backup & restore (.sql)',
+      'Slow query warning with EXPLAIN',
+      'Copy WHERE clause from any row',
     ],
   },
   {
     title: 'Import & Export',
     emoji: '📦',
     color: '#c586c0',
+    desc: 'Move data in and out effortlessly',
     items: [
       'Export as CSV, JSON or SQL',
-      'Import from CSV with mapping',
-      'Copy rows as PHP, Python, Go, etc.',
+      'Import from CSV with column mapping',
+      'Copy rows as PHP, Python, Go, Ruby, YAML',
       'Copy CREATE TABLE statements',
-      'Connection import/export (JSON)',
-      'Connection string import',
+      'Export full table via right-click',
+      'Connection import/export',
     ],
   },
   {
     title: 'Connections',
     emoji: '🔌',
     color: '#0078d4',
+    desc: 'Connect securely to any database, anywhere',
     items: [
       'Multi-connection tabs',
       'Multi-database sidebar',
       'SSH tunnel (password + key)',
-      'SSL/TLS with certificate files',
+      'SSL/TLS with custom certificates',
       'OS keychain credentials',
-      'Connection grouping & colors',
+      'Connection grouping with drag-drop',
+      'Connection color coding',
+      'Session restore on restart',
     ],
   },
   {
     title: 'Experience',
     emoji: '✨',
     color: '#f44747',
+    desc: 'Polished to the last pixel',
     items: [
       '36 keyboard shortcuts',
-      'Cmd+P command palette',
+      'Command palette (Cmd+P)',
       'Dark & light themes',
-      'Pin favorite tables',
-      'Auto-update system',
-      'Settings & preferences',
+      'Pin favorite tables to top',
+      'Auto-update with progress',
+      'First-run onboarding',
+      'OS notifications for long queries',
+      'Reconnect on connection drop',
     ],
   },
 ]
@@ -271,46 +299,113 @@ const DETAIL_CATEGORIES = [
   transform: translateY(-2px);
 }
 
-/* Bento grid */
-.bento-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+/* Hood tabs */
+.hood-tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.hood-tab:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.05);
+}
+.hood-tab-active {
+  color: white;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-@media (max-width: 1023px) {
-  .bento-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 639px) {
-  .bento-grid { grid-template-columns: 1fr; }
-}
-
-.bento-wide {
-  grid-column: span 2;
-}
-@media (max-width: 639px) {
-  .bento-wide { grid-column: span 1; }
-}
-
-.bento-card {
+/* Hood panel */
+.hood-panel {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  padding: 32px;
   background: rgba(255, 255, 255, 0.015);
   border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 16px;
-  overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 20px;
+  animation: hood-fade-in 0.3s ease;
 }
-.bento-card:hover {
-  border-color: rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.025);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+@media (max-width: 767px) {
+  .hood-panel {
+    flex-direction: column;
+    padding: 24px;
+    gap: 24px;
+  }
 }
 
-.bento-item {
-  transition: all 0.2s ease;
+@keyframes hood-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-.bento-card:hover .bento-item svg {
-  color: currentColor !important;
-  opacity: 1;
+
+/* Feature row */
+.hood-feature-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  font-size: 13px;
+  color: var(--color-text-muted);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+.hood-feature-row:last-child {
+  border-bottom: none;
+}
+
+.hood-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+
+/* Visual block */
+.hood-visual {
+  width: 180px;
+  height: 180px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+@media (max-width: 767px) {
+  .hood-visual { display: none; }
+}
+
+.hood-visual-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Stats strip */
+.hood-stat {
+  text-align: center;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+  transition: border-color 0.2s;
+}
+.hood-stat:hover {
+  border-color: rgba(255, 255, 255, 0.1);
 }
 </style>
