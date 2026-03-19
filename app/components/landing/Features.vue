@@ -92,40 +92,83 @@
       </div>
     </div>
 
-    <!-- Detailed features - categorized cards -->
-    <div class="mt-20 pt-16 border-t border-white/[0.06]">
-      <div class="text-center mb-14">
-        <h3 class="text-2xl font-bold text-white mb-3">Under the hood</h3>
-        <p class="text-sm text-[var(--color-text-dim)] max-w-[400px] mx-auto">Every feature designed to save you time</p>
+    <!-- Under the hood — bento grid -->
+    <div class="mt-24 pt-20 border-t border-white/[0.06]">
+      <div class="text-center mb-16">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] text-sm text-[var(--color-text-muted)] mb-5">
+          Under the hood
+        </div>
+        <h3 class="text-[clamp(28px,3.5vw,40px)] font-bold text-white mb-3">
+          Packed with power,<br />
+          <span class="gradient-text">designed for speed</span>
+        </h3>
+        <p class="text-sm text-[var(--color-text-dim)] max-w-[440px] mx-auto leading-relaxed">Every detail crafted to keep you in the flow. Here's what's inside.</p>
       </div>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Bento grid -->
+      <div class="bento-grid">
         <div
-          v-for="category in DETAIL_CATEGORIES"
-          :key="category.title"
-          class="rounded-2xl border border-white/[0.06] bg-white/[0.015] p-6 hover:border-white/[0.1] transition-all duration-300"
+          v-for="(cat, ci) in DETAIL_CATEGORIES"
+          :key="cat.title"
+          class="bento-card group"
+          :class="ci === 0 ? 'bento-wide' : ''"
         >
-          <!-- Category header -->
-          <div class="flex items-center gap-3 mb-5">
-            <div
-              class="w-9 h-9 rounded-lg flex items-center justify-center text-lg"
-              :style="{ background: category.color + '15' }"
-            >
-              <span>{{ category.emoji }}</span>
-            </div>
-            <h4 class="text-sm font-semibold text-white uppercase tracking-wider">{{ category.title }}</h4>
-          </div>
+          <!-- Gradient accent line at top -->
+          <div class="h-[2px] rounded-t-2xl" :style="{ background: `linear-gradient(90deg, ${cat.color}, ${cat.color}40)` }" />
 
-          <!-- Feature items -->
-          <div class="space-y-2.5">
-            <div
-              v-for="item in category.items"
-              :key="item"
-              class="flex items-center gap-2.5"
-            >
-              <div class="w-1.5 h-1.5 rounded-full shrink-0" :style="{ background: category.color + '80' }" />
-              <span class="text-[13px] text-[var(--color-text-muted)] leading-snug">{{ item }}</span>
+          <div class="p-7">
+            <!-- Header -->
+            <div class="flex items-center gap-3 mb-6">
+              <div
+                class="w-10 h-10 rounded-xl flex items-center justify-center text-xl transition-transform duration-300 group-hover:scale-110"
+                :style="{ background: `linear-gradient(135deg, ${cat.color}20, ${cat.color}08)` }"
+              >
+                {{ cat.emoji }}
+              </div>
+              <div>
+                <h4 class="text-[15px] font-semibold text-white">{{ cat.title }}</h4>
+                <p class="text-[11px] text-[var(--color-text-dim)]">{{ cat.items.length }} features</p>
+              </div>
             </div>
+
+            <!-- Items with staggered animation -->
+            <div class="space-y-0">
+              <div
+                v-for="(item, ii) in cat.items"
+                :key="item"
+                class="bento-item flex items-center gap-3 py-2 border-b border-white/[0.03] last:border-0"
+              >
+                <svg class="w-3.5 h-3.5 shrink-0 transition-colors duration-200" :style="{ color: cat.color + '60' }" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span class="text-[13px] text-[var(--color-text-muted)] group-hover:text-[var(--color-text-body)] transition-colors duration-300">{{ item }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Total count bar -->
+      <div class="mt-10 flex justify-center">
+        <div class="inline-flex items-center gap-6 px-8 py-3 rounded-full bg-white/[0.03] border border-white/[0.06]">
+          <div class="text-center">
+            <div class="text-lg font-bold text-white">36+</div>
+            <div class="text-[10px] text-[var(--color-text-dim)] uppercase tracking-wider">Features</div>
+          </div>
+          <div class="w-px h-8 bg-white/[0.06]" />
+          <div class="text-center">
+            <div class="text-lg font-bold text-white">36</div>
+            <div class="text-[10px] text-[var(--color-text-dim)] uppercase tracking-wider">Shortcuts</div>
+          </div>
+          <div class="w-px h-8 bg-white/[0.06]" />
+          <div class="text-center">
+            <div class="text-lg font-bold text-white">4</div>
+            <div class="text-[10px] text-[var(--color-text-dim)] uppercase tracking-wider">Engines</div>
+          </div>
+          <div class="w-px h-8 bg-white/[0.06]" />
+          <div class="text-center">
+            <div class="text-lg font-bold text-white">6</div>
+            <div class="text-[10px] text-[var(--color-text-dim)] uppercase tracking-wider">Export formats</div>
           </div>
         </div>
       </div>
@@ -226,5 +269,48 @@ const DETAIL_CATEGORIES = [
 .feature-card:hover {
   background: rgba(255, 255, 255, 0.03);
   transform: translateY(-2px);
+}
+
+/* Bento grid */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 1023px) {
+  .bento-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 639px) {
+  .bento-grid { grid-template-columns: 1fr; }
+}
+
+.bento-wide {
+  grid-column: span 2;
+}
+@media (max-width: 639px) {
+  .bento-wide { grid-column: span 1; }
+}
+
+.bento-card {
+  background: rgba(255, 255, 255, 0.015);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.bento-card:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.025);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+}
+
+.bento-item {
+  transition: all 0.2s ease;
+}
+.bento-card:hover .bento-item svg {
+  color: currentColor !important;
+  opacity: 1;
 }
 </style>
