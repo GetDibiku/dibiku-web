@@ -186,10 +186,10 @@ function setCategory(index: number) {
 }
 
 const HOOD_STATS = [
-  { value: '36+', label: 'Features' },
+  { value: '50+', label: 'Features' },
   { value: '36', label: 'Keyboard shortcuts' },
   { value: '4', label: 'Database engines' },
-  { value: '6', label: 'Export formats' },
+  { value: '6+', label: 'Export formats' },
 ]
 
 const DETAIL_CATEGORIES = [
@@ -203,10 +203,10 @@ const DETAIL_CATEGORIES = [
       'Schema-aware autocomplete',
       'Multi-statement execution with tabs',
       'SQL formatter (Cmd+Shift+F)',
+      'Query variables — :user_id placeholders',
       'EXPLAIN query visualizer',
       'Saved queries & query history',
       'Query snippets per engine',
-      'Editor auto-save to localStorage',
     ],
   },
   {
@@ -231,14 +231,14 @@ const DETAIL_CATEGORIES = [
     color: '#e6922e',
     desc: 'Everything you need to manage your database',
     items: [
+      'Schema diff between connections',
+      'Data masking for sensitive columns',
       'Foreign key viewer & navigation',
-      'Table structure inspector',
       'Column statistics on right-click',
       'Row comparison (select 2 rows)',
-      'Create / duplicate / drop tables',
       'Backup & restore (.sql)',
       'Slow query warning with EXPLAIN',
-      'Copy WHERE clause from any row',
+      'Create / duplicate / drop tables',
     ],
   },
   {
