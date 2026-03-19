@@ -177,7 +177,7 @@ const DETAIL_CATEGORIES = [
     color: '#60a5fa',
     desc: 'A full IDE-grade editor right in your database client',
     items: [
-      'CodeMirror 6 with syntax highlighting',
+      'Full syntax highlighting & IntelliSense',
       'Schema-aware autocomplete',
       'Multi-statement execution with tabs',
       'SQL formatter (Cmd+Shift+F)',

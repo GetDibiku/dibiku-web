@@ -35,7 +35,7 @@
 
         <p class="text-[var(--color-text-muted)] text-sm leading-relaxed mb-10 max-w-[600px]">
           The first public release of Dibiku — a fast, lightweight database client for MySQL, PostgreSQL, SQLite, and Redis.
-          Built from the ground up with Tauri + Rust, focusing on speed, keyboard-first workflows, and zero bloat.
+          Built from the ground up for speed, keyboard-first workflows, and zero bloat.
         </p>
 
         <!-- Category cards -->
@@ -178,7 +178,7 @@
               <span class="cl-card-date">March 16, 2026</span>
             </div>
             <ul class="cl-list">
-              <li>CodeMirror 6 editor with SQL syntax highlighting</li>
+              <li>Full-featured SQL editor with syntax highlighting</li>
               <li>Schema-aware autocomplete for tables, columns, and SQL keywords</li>
               <li>Multi-statement execution with result tabs</li>
               <li>SQL formatter (Cmd+Shift+F)</li>

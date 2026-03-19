@@ -10,7 +10,7 @@ export const ENGINES = [
 export const FEATURES = [
   {
     title: 'Pro-grade SQL editor',
-    desc: 'CodeMirror 6 with schema-aware autocomplete, multi-statement execution, SQL formatter, query variables, EXPLAIN visualizer, and saved snippets per engine.',
+    desc: 'Schema-aware autocomplete, multi-statement execution, SQL formatter, query variables with :placeholders, EXPLAIN visualizer, and saved snippets per engine.',
     stat: 'Full',
     statLabel: 'SQL IDE built in',
     gradient: ['#0078d4', '#00b4d8'],
