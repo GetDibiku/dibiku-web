@@ -164,7 +164,7 @@ function iconBg(feature: typeof FEATURES[number]) {
 }
 
 const HOOD_STATS = [
-  { value: '50+', label: 'Features' },
+  { value: '55+', label: 'Features' },
   { value: '36', label: 'Shortcuts' },
   { value: '4', label: 'Engines' },
   { value: '6+', label: 'Export formats' },
@@ -217,6 +217,8 @@ const DETAIL_CATEGORIES = [
       'Backup & restore (.sql)',
       'Slow query warning with EXPLAIN',
       'Create / duplicate / drop tables',
+      'Metrics Board — SQL-powered charts',
+      'Auto-refresh dashboard cards',
     ],
   },
   {

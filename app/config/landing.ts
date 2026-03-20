@@ -62,6 +62,15 @@ export const FEATURES = [
     icon: 'feather',
     highlights: ['CSV', 'JSON', 'SQL', 'Code copy'],
   },
+  {
+    title: 'Metrics Board',
+    desc: 'Write SQL, pick a chart type, and see live visualizations on a dashboard. Bar, line, pie, and doughnut charts with auto-refresh — your data, always up to date.',
+    stat: '5',
+    statLabel: 'chart types',
+    gradient: ['#06b6d4', '#22d3ee'],
+    icon: 'chart',
+    highlights: ['Bar', 'Line', 'Pie', 'Auto-refresh'],
+  },
 ] as const
 
 export const PRICING = [
@@ -92,6 +101,7 @@ export const PRICING = [
       'Export to CSV, JSON, SQL',
       'Full query history',
       'Unlimited tabs & saved queries',
+      'Metrics Board with auto-refresh',
     ],
     cta: 'Start 14-day Free Trial',
     highlight: true,
