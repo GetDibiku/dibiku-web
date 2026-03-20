@@ -219,6 +219,8 @@ const DETAIL_CATEGORIES = [
       'Create / duplicate / drop tables',
       'Metrics Board — SQL-powered charts',
       'Auto-refresh dashboard cards',
+      'Full-screen chart detail with data table',
+      'Export charts as PDF',
     ],
   },
   {
@@ -227,7 +229,7 @@ const DETAIL_CATEGORIES = [
     color: '#c586c0',
     desc: 'Move data in and out effortlessly',
     items: [
-      'Export as CSV, JSON or SQL',
+      'Export as CSV, JSON, SQL or PDF',
       'Import from CSV with column mapping',
       'Copy rows as PHP, Python, Go, Ruby, YAML',
       'Copy CREATE TABLE statements',

@@ -1,15 +1,6 @@
 <template>
   <div class="min-h-screen">
-    <!-- Nav -->
-    <nav class="sticky top-0 z-50 glass-nav border-b border-white/[0.06]">
-      <div class="max-w-[800px] mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="/" class="flex items-center gap-2.5 no-underline">
-          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-light)] flex items-center justify-center text-white text-sm font-bold">Di</div>
-          <span class="text-white font-semibold text-lg">Dibiku</span>
-        </a>
-        <a href="/" class="text-sm text-[var(--color-text-muted)] hover:text-white transition-colors no-underline">&larr; Back to home</a>
-      </div>
-    </nav>
+    <Navbar />
 
     <!-- Header -->
     <div class="max-w-[800px] mx-auto px-6 pt-20 pb-16">
@@ -54,9 +45,13 @@
               <li>Multi-step chart builder with live SQL preview (first 5 rows)</li>
               <li>Configurable X/Y column mapping from query results</li>
               <li>3 card sizes: small (1 col), medium (2 col), large (4 col) in a responsive grid</li>
+              <li>4 grid layouts: switch between 1, 2, 3, or 4 columns — persisted per connection</li>
+              <li>Full-screen chart detail view with Chart/Data toggle</li>
+              <li>Export chart as PDF — chart image + full data table, dark-themed, multi-page</li>
               <li>Auto-refresh with configurable intervals (10s, 30s, 1m, 5m, 10m)</li>
               <li>Edit and update existing charts in-place</li>
               <li>Per-connection card persistence — cards saved to config database</li>
+              <li>Per-connection state isolation — switching connections preserves each dashboard independently</li>
               <li>Database context stored per card — works across database switches</li>
               <li>Dark theme optimized charts via Chart.js + vue-chartjs</li>
               <li>Dashboard hidden for Redis connections (no SQL support)</li>
@@ -238,36 +233,26 @@
           </div>
         </div>
 
-        <!-- Keyboard shortcuts -->
-        <div class="mt-12">
-          <h2 class="text-lg font-semibold text-white mb-6 flex items-center gap-2">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="6" y1="8" x2="6" y2="8" stroke-width="3"/><line x1="10" y1="8" x2="10" y2="8" stroke-width="3"/><line x1="14" y1="8" x2="14" y2="8" stroke-width="3"/><line x1="18" y1="8" x2="18" y2="8" stroke-width="3"/><line x1="8" y1="16" x2="16" y2="16"/></svg>
-            Keyboard Shortcuts
-            <span class="text-xs font-normal text-[var(--color-text-dim)]">(36 total)</span>
-          </h2>
-          <div class="grid sm:grid-cols-2 gap-x-8 gap-y-0">
-            <div v-for="s in shortcuts" :key="s.keys" class="cl-shortcut-row">
-              <span class="text-[13px] text-[var(--color-text-muted)]">{{ s.desc }}</span>
-              <div class="flex gap-1">
-                <kbd v-for="k in s.keys.split('+')" :key="k" class="cl-kbd">{{ k.trim() }}</kbd>
-              </div>
-            </div>
+        <!-- Keyboard shortcuts link -->
+        <div class="mt-12 p-5 rounded-xl bg-white/[0.02] border border-white/[0.06] flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="6" y1="8" x2="6" y2="8" stroke-width="3"/><line x1="10" y1="8" x2="10" y2="8" stroke-width="3"/><line x1="14" y1="8" x2="14" y2="8" stroke-width="3"/><line x1="18" y1="8" x2="18" y2="8" stroke-width="3"/><line x1="8" y1="16" x2="16" y2="16"/></svg>
+            <span class="text-sm text-white font-medium">36 Keyboard Shortcuts</span>
           </div>
+          <NuxtLink to="/shortcuts" class="text-sm text-[var(--color-accent)] hover:underline no-underline">View all →</NuxtLink>
         </div>
       </article>
     </div>
 
     <!-- Footer -->
-    <footer class="border-t border-white/[0.06] py-8 px-6">
-      <div class="max-w-[800px] mx-auto flex justify-between items-center flex-wrap gap-4">
-        <span class="text-sm text-[var(--color-text-dim)]">&copy; 2026 Dibiku</span>
-        <a href="/" class="text-sm text-[var(--color-text-muted)] hover:text-white transition-colors no-underline">Home</a>
-      </div>
-    </footer>
+    <Footer />
   </div>
 </template>
 
 <script setup lang="ts">
+import Navbar from '~/components/landing/Navbar.vue'
+import Footer from '~/components/landing/Footer.vue'
+
 useHead({
   title: 'Changelog — Dibiku',
   meta: [
@@ -275,39 +260,6 @@ useHead({
   ],
 })
 
-const shortcuts = [
-  { keys: '⌘+K', desc: 'Switch database' },
-  { keys: '⌘+W', desc: 'Close tab' },
-  { keys: '⌘+Shift+T', desc: 'Reopen closed tab' },
-  { keys: '⌘+J', desc: 'Toggle sidebar' },
-  { keys: '⌘+N', desc: 'New connection / Add row' },
-  { keys: '⌘+R', desc: 'Refresh data' },
-  { keys: '⌘+P', desc: 'Quick table search' },
-  { keys: '⌘+1/2/3/4/5', desc: 'Switch views' },
-  { keys: '⌘+B', desc: 'Saved queries' },
-  { keys: '⌘+L', desc: 'Query log' },
-  { keys: '⌘+F', desc: 'Filter / Search' },
-  { keys: '⌘+S', desc: 'Save edits / query' },
-  { keys: '⌘+Enter', desc: 'Execute query' },
-  { keys: '⌘+Shift+Enter', desc: 'Execute selection' },
-  { keys: '⌘+E', desc: 'Run EXPLAIN' },
-  { keys: '⌘+C', desc: 'Copy rows' },
-  { keys: '⌘+V', desc: 'Paste rows' },
-  { keys: '⌘+Shift+C', desc: 'Copy as INSERT' },
-  { keys: '⌘+Shift+E', desc: 'Export as CSV' },
-  { keys: '⌘+Shift+F', desc: 'Format SQL' },
-  { keys: '⌘+Z', desc: 'Undo cell edit' },
-  { keys: '⌘+A', desc: 'Select all rows' },
-  { keys: '⌘+D', desc: 'Duplicate to editor' },
-  { keys: '⌘+?', desc: 'Shortcuts cheat sheet' },
-  { keys: '⌘+Shift+H', desc: 'Clear history' },
-  { keys: 'Delete', desc: 'Delete selected rows' },
-  { keys: 'Escape', desc: 'Close panel' },
-  { keys: 'Enter', desc: 'Edit cell' },
-  { keys: 'Tab', desc: 'Next cell' },
-  { keys: '↑/↓', desc: 'Navigate rows' },
-  { keys: 'Ctrl+Tab', desc: 'Cycle tabs' },
-]
 </script>
 
 <style scoped>

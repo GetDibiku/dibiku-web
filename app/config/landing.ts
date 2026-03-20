@@ -64,12 +64,12 @@ export const FEATURES = [
   },
   {
     title: 'Metrics Board',
-    desc: 'Write SQL, pick a chart type, and see live visualizations on a dashboard. Bar, line, pie, and doughnut charts with auto-refresh — your data, always up to date.',
+    desc: 'Write SQL, pick a chart type, and see live visualizations on a dashboard. Multiple layouts, full-screen detail view, and export to PDF — your data, always up to date.',
     stat: '5',
     statLabel: 'chart types',
     gradient: ['#06b6d4', '#22d3ee'],
     icon: 'chart',
-    highlights: ['Bar', 'Line', 'Pie', 'Auto-refresh'],
+    highlights: ['5 chart types', 'PDF export', 'Auto-refresh', '4 layouts'],
   },
 ] as const
 

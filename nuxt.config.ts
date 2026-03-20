@@ -47,7 +47,12 @@ export default defineNuxtConfig({
 
   routeRules: {
     '/': { prerender: true },
+    '/features': { prerender: true },
+    '/compare': { prerender: true },
+    '/pricing': { prerender: true },
+    '/download': { prerender: true },
     '/changelog': { prerender: true },
+    '/shortcuts': { prerender: true },
   },
 
   nitro: {
