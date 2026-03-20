@@ -22,6 +22,52 @@
 
     <!-- Timeline -->
     <div class="max-w-[800px] mx-auto px-6 pb-24">
+      <!-- v0.2.0 -->
+      <article class="cl-release">
+        <!-- Release header -->
+        <div class="cl-release-header">
+          <div class="cl-version-badge">
+            <span class="cl-version">v0.2.0</span>
+            <span class="cl-badge cl-badge-new">New</span>
+          </div>
+          <span class="cl-date">March 20, 2026</span>
+        </div>
+
+        <p class="text-[var(--color-text-muted)] text-sm leading-relaxed mb-10 max-w-[600px]">
+          Introducing the Metrics Board — write SQL, pick a chart type, and see live visualizations right inside Dibiku.
+        </p>
+
+        <!-- Category cards -->
+        <div class="cl-sections">
+          <!-- Metrics Board -->
+          <div class="cl-card cl-card-highlight">
+            <div class="cl-card-header">
+              <div class="cl-card-icon" style="background: rgba(6, 182, 212, 0.12); color: #22d3ee">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20" stroke-opacity="0.4"/></svg>
+              </div>
+              <h2 class="cl-card-title">Metrics Board</h2>
+              <span class="cl-card-date">March 20, 2026</span>
+            </div>
+            <ul class="cl-list">
+              <li>New Dashboard tab — SQL-powered chart visualizations per connection</li>
+              <li>5 chart types: Bar, Line, Area, Pie, and Doughnut</li>
+              <li>Multi-step chart builder with live SQL preview (first 5 rows)</li>
+              <li>Configurable X/Y column mapping from query results</li>
+              <li>3 card sizes: small (1 col), medium (2 col), large (4 col) in a responsive grid</li>
+              <li>Auto-refresh with configurable intervals (10s, 30s, 1m, 5m, 10m)</li>
+              <li>Edit and update existing charts in-place</li>
+              <li>Per-connection card persistence — cards saved to config database</li>
+              <li>Database context stored per card — works across database switches</li>
+              <li>Dark theme optimized charts via Chart.js + vue-chartjs</li>
+              <li>Dashboard hidden for Redis connections (no SQL support)</li>
+              <li>Keyboard shortcut: <code>⌘+5</code> to switch to Dashboard tab</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <div class="cl-divider" />
+
       <!-- v0.1.0 -->
       <article class="cl-release">
         <!-- Release header -->
@@ -237,7 +283,7 @@ const shortcuts = [
   { keys: '⌘+N', desc: 'New connection / Add row' },
   { keys: '⌘+R', desc: 'Refresh data' },
   { keys: '⌘+P', desc: 'Quick table search' },
-  { keys: '⌘+1/2/3/4', desc: 'Switch views' },
+  { keys: '⌘+1/2/3/4/5', desc: 'Switch views' },
   { keys: '⌘+B', desc: 'Saved queries' },
   { keys: '⌘+L', desc: 'Query log' },
   { keys: '⌘+F', desc: 'Filter / Search' },
@@ -306,6 +352,18 @@ const shortcuts = [
   color: var(--color-text-dim);
 }
 
+.cl-badge-new {
+  background: rgba(6, 182, 212, 0.12);
+  border-color: rgba(6, 182, 212, 0.25);
+  color: #22d3ee;
+}
+
+.cl-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.06);
+  margin: 40px 0;
+}
+
 /* === Category Cards === */
 .cl-sections {
   display: grid;
@@ -321,6 +379,14 @@ const shortcuts = [
 }
 .cl-card:hover {
   border-color: rgba(255, 255, 255, 0.1);
+}
+
+.cl-card-highlight {
+  border-color: rgba(6, 182, 212, 0.15);
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.04), rgba(255, 255, 255, 0.015));
+}
+.cl-card-highlight:hover {
+  border-color: rgba(6, 182, 212, 0.25);
 }
 
 .cl-card-header {
