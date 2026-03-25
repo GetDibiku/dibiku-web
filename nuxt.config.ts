@@ -53,6 +53,7 @@ export default defineNuxtConfig({
     '/download': { prerender: true },
     '/changelog': { prerender: true },
     '/shortcuts': { prerender: true },
+    '/about': { prerender: true },
   },
 
   nitro: {

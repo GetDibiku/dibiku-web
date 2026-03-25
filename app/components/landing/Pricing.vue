@@ -1,13 +1,13 @@
 <template>
   <section class="max-w-[1100px] mx-auto px-6 pt-20 pb-24" id="pricing">
     <div class="text-center mb-12">
-      <h2 class="text-4xl font-bold text-white mb-3">Simple, honest pricing</h2>
-      <p class="text-[var(--color-text-dim)] text-base">Free forever for personal use. Upgrade only when you need more.</p>
+      <h2 class="text-4xl font-bold text-white mb-3">Free and open</h2>
+      <p class="text-[var(--color-text-dim)] text-base">Everything you need to work with your databases — no strings attached.</p>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-5 max-w-[700px] mx-auto">
+    <div class="grid gap-5 max-w-[380px] mx-auto">
       <div
-        v-for="plan in PRICING"
+        v-for="plan in PRICING.filter(p => !p.highlight)"
         :key="plan.name"
         class="p-9 rounded-2xl relative overflow-hidden"
         :class="plan.highlight

@@ -71,8 +71,8 @@ const navLinks = [
   { label: 'Features', to: '/features' },
   { label: 'Compare', to: '/compare' },
   { label: 'Pricing', to: '/pricing' },
-  { label: 'Changelog', to: '/changelog' },
   { label: 'Shortcuts', to: '/shortcuts' },
+  { label: 'About', to: '/about' },
 ]
 
 function isActive(path: string) {

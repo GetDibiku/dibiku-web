@@ -37,7 +37,6 @@ useHead({
         featureList: 'SSH Terminal, SSH Tunnel, Multi-tab SQL Editor, Virtual Scroll Data Grid, Query Variables, EXPLAIN Visualizer, Metrics Board, Data Masking, Schema Diff, 36+ Keyboard Shortcuts',
         offers: [
           { '@type': 'Offer', price: '0', priceCurrency: 'USD', name: 'Free' },
-          { '@type': 'Offer', price: '8', priceCurrency: 'USD', name: 'Pro', billingIncrement: 'P1M' },
         ],
         url: 'https://dibiku.id',
       }),
