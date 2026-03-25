@@ -3,13 +3,7 @@
     <div class="max-w-[1100px] mx-auto px-6 flex items-center justify-between" :style="{ height: scrolled ? '56px' : '64px', transition: 'height 0.3s' }">
       <!-- Logo -->
       <NuxtLink to="/" class="nav-logo">
-        <div class="nav-logo-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round">
-            <ellipse cx="12" cy="6" rx="8" ry="3" />
-            <path d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6" />
-            <path d="M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6" />
-          </svg>
-        </div>
+        <img src="/logo-icon.png" alt="Dibiku" class="nav-logo-icon" />
         <span class="nav-logo-text">Dibiku</span>
       </NuxtLink>
 
@@ -116,17 +110,12 @@ onMounted(() => {
 .nav-logo-icon {
   width: 34px;
   height: 34px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #0078d4, #00b4d8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 8px rgba(0, 120, 212, 0.25);
-  transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: 8px;
+  object-fit: contain;
+  transition: transform 0.2s;
 }
 .nav-logo:hover .nav-logo-icon {
   transform: scale(1.05);
-  box-shadow: 0 4px 16px rgba(0, 120, 212, 0.35);
 }
 
 .nav-logo-text {

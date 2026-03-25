@@ -5,9 +5,7 @@
         <!-- Brand -->
         <div>
           <NuxtLink to="/" class="flex items-center gap-2 no-underline mb-3">
-            <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-light)] flex items-center justify-center text-white text-[10px] font-bold">
-              Di
-            </div>
+            <img src="/logo-icon.png" alt="Dibiku" class="w-7 h-7 rounded-md object-contain" />
             <span class="text-white font-semibold">Dibiku</span>
           </NuxtLink>
           <p class="text-xs text-[var(--color-text-dim)] max-w-[240px] leading-relaxed">The fast, lightweight database client for MySQL, PostgreSQL, SQLite, and Redis.</p>
