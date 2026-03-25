@@ -13,13 +13,76 @@
 
     <!-- Timeline -->
     <div class="max-w-[800px] mx-auto px-6 pb-24">
+      <!-- v0.3.0 -->
+      <article class="cl-release">
+        <!-- Release header -->
+        <div class="cl-release-header">
+          <div class="cl-version-badge">
+            <span class="cl-version">v0.3.0</span>
+            <span class="cl-badge cl-badge-new">New</span>
+          </div>
+          <span class="cl-date">March 25, 2026</span>
+        </div>
+
+        <p class="text-[var(--color-text-muted)] text-sm leading-relaxed mb-10 max-w-[600px]">
+          Multiple query tabs and full SSH tunnel support — work on several queries at once and connect securely to remote databases.
+        </p>
+
+        <!-- Category cards -->
+        <div class="cl-sections">
+          <!-- Query Tabs -->
+          <div class="cl-card cl-card-highlight-blue">
+            <div class="cl-card-header">
+              <div class="cl-card-icon" style="background: rgba(0, 120, 212, 0.12); color: #60a5fa">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </div>
+              <h2 class="cl-card-title">Multiple Query Tabs</h2>
+              <span class="cl-card-date">March 25, 2026</span>
+            </div>
+            <ul class="cl-list">
+              <li>Open multiple query tabs per connection — each with its own SQL, results, and state</li>
+              <li>Query tabs scoped per database — switching databases shows only relevant tabs</li>
+              <li>Keyboard shortcuts: <code>⌘+T</code> new tab, <code>⌘+W</code> close tab</li>
+              <li>Double-click tab title to rename inline</li>
+              <li>Tab state (SQL text) persisted to localStorage across sessions</li>
+              <li>Migration: existing editor content automatically moves to the first tab</li>
+              <li>Race-condition safe — query results always land in the correct tab, even when switching mid-execution</li>
+              <li>External callers (saved queries, history, snippets, Cmd+D) open into the active query tab</li>
+            </ul>
+          </div>
+
+          <!-- SSH Tunnel -->
+          <div class="cl-card cl-card-highlight-green">
+            <div class="cl-card-header">
+              <div class="cl-card-icon" style="background: rgba(5, 150, 105, 0.12); color: #4ec9b0">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+              </div>
+              <h2 class="cl-card-title">SSH Tunnel Support</h2>
+              <span class="cl-card-date">March 25, 2026</span>
+            </div>
+            <ul class="cl-list">
+              <li>Full SSH tunnel for MySQL, PostgreSQL, and Redis connections</li>
+              <li>Password-based and key-based authentication</li>
+              <li>Passphrase support for encrypted private keys</li>
+              <li>Configurable SSH host, port, and username</li>
+              <li>Automatic local port forwarding with dynamic port allocation</li>
+              <li>SSH section in connection form with collapsible toggle</li>
+              <li>Key file picker via native file dialog</li>
+              <li>Tunnel lifecycle managed per connection — auto-close on disconnect</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <div class="cl-divider" />
+
       <!-- v0.2.0 -->
       <article class="cl-release">
         <!-- Release header -->
         <div class="cl-release-header">
           <div class="cl-version-badge">
             <span class="cl-version">v0.2.0</span>
-            <span class="cl-badge cl-badge-new">New</span>
+            <span class="cl-badge">Previous</span>
           </div>
           <span class="cl-date">March 20, 2026</span>
         </div>
@@ -339,6 +402,22 @@ useHead({
 }
 .cl-card-highlight:hover {
   border-color: rgba(6, 182, 212, 0.25);
+}
+
+.cl-card-highlight-blue {
+  border-color: rgba(0, 120, 212, 0.15);
+  background: linear-gradient(135deg, rgba(0, 120, 212, 0.04), rgba(255, 255, 255, 0.015));
+}
+.cl-card-highlight-blue:hover {
+  border-color: rgba(0, 120, 212, 0.25);
+}
+
+.cl-card-highlight-green {
+  border-color: rgba(5, 150, 105, 0.15);
+  background: linear-gradient(135deg, rgba(5, 150, 105, 0.04), rgba(255, 255, 255, 0.015));
+}
+.cl-card-highlight-green:hover {
+  border-color: rgba(5, 150, 105, 0.25);
 }
 
 .cl-card-header {
