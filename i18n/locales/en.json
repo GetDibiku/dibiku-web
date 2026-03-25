@@ -9,9 +9,9 @@
   },
   "hero": {
     "badge": "Now in public beta",
-    "headline1": "Your database,",
-    "headline2": "without the bloat",
-    "subtitle": "A lightning-fast desktop client with multi-tab SQL editor, built-in SSH terminal & tunnels, virtual scrolling data grid, and 30+ keyboard shortcuts. MySQL, PostgreSQL, SQLite, and Redis - all in one app.",
+    "headline1": "Manage your database",
+    "headline2": "10x faster",
+    "subtitle": "One app for MySQL, PostgreSQL, SQLite, and Redis. Multi-tab SQL editor, built-in SSH terminal, blazing-fast data grid, and 30+ keyboard shortcuts - starts in under 2 seconds.",
     "cta": "Download for macOS"
   },
   "whatsNew": {

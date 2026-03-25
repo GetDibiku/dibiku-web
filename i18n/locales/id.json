@@ -9,9 +9,9 @@
   },
   "hero": {
     "badge": "Sedang dalam beta publik",
-    "headline1": "Database kamu,",
-    "headline2": "tanpa bloat",
-    "subtitle": "Klien desktop super cepat dengan SQL editor multi-tab, SSH terminal & tunnel bawaan, data grid virtual scrolling, dan 30+ pintasan keyboard. MySQL, PostgreSQL, SQLite, dan Redis - semua dalam satu aplikasi.",
+    "headline1": "Kelola database kamu",
+    "headline2": "10x lebih cepat",
+    "subtitle": "Satu aplikasi untuk MySQL, PostgreSQL, SQLite, dan Redis. SQL editor multi-tab, SSH terminal bawaan, data grid super cepat, dan 30+ pintasan keyboard - siap pakai dalam hitungan detik.",
     "cta": "Unduh untuk macOS"
   },
   "whatsNew": {

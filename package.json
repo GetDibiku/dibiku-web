@@ -12,6 +12,7 @@
   "dependencies": {
     "@nuxtjs/i18n": "^10.2.4",
     "@tailwindcss/vite": "^4.2.1",
+    "@vercel/analytics": "^2.0.1",
     "@vueuse/core": "^14.2.1",
     "nuxt": "^4.4.2",
     "tailwindcss": "^4.2.1",
