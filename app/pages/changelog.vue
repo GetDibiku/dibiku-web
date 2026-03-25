@@ -25,7 +25,7 @@
         </div>
 
         <p class="text-[var(--color-text-muted)] text-sm leading-relaxed mb-10 max-w-[600px]">
-          Multiple query tabs and full SSH tunnel support — work on several queries at once and connect securely to remote databases.
+          Multiple query tabs, SSH tunnels for database connections, and a built-in SSH terminal — work on several queries at once and manage remote servers without leaving the app.
         </p>
 
         <!-- Category cards -->
@@ -57,18 +57,42 @@
               <div class="cl-card-icon" style="background: rgba(5, 150, 105, 0.12); color: #4ec9b0">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
               </div>
-              <h2 class="cl-card-title">SSH Tunnel Support</h2>
+              <h2 class="cl-card-title">SSH Tunnel for Databases</h2>
               <span class="cl-card-date">March 25, 2026</span>
             </div>
             <ul class="cl-list">
-              <li>Full SSH tunnel for MySQL, PostgreSQL, and Redis connections</li>
-              <li>Password-based and key-based authentication</li>
-              <li>Passphrase support for encrypted private keys</li>
-              <li>Configurable SSH host, port, and username</li>
-              <li>Automatic local port forwarding with dynamic port allocation</li>
+              <li>SSH tunnel for MySQL, PostgreSQL, and Redis connections</li>
+              <li>Password-based auth (via sshpass) and key-based auth</li>
+              <li>Automatic local port forwarding — binds random available port, forwards to remote DB</li>
+              <li>Tunnel verification with TCP ping retry (800ms + 1200ms timeout)</li>
+              <li>Test connection (ping) validates tunnel + database connectivity before saving</li>
               <li>SSH section in connection form with collapsible toggle</li>
-              <li>Key file picker via native file dialog</li>
+              <li>Key file picker via native file dialog (.pem, .key, .crt, .cert, .p12)</li>
               <li>Tunnel lifecycle managed per connection — auto-close on disconnect</li>
+              <li>SSH password stored securely in OS keychain</li>
+            </ul>
+          </div>
+
+          <!-- SSH Terminal -->
+          <div class="cl-card cl-card-highlight-green">
+            <div class="cl-card-header">
+              <div class="cl-card-icon" style="background: rgba(5, 150, 105, 0.12); color: #4ec9b0">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="18" rx="2"/><polyline points="7 9 10 12 7 15"/><line x1="13" y1="15" x2="17" y2="15"/></svg>
+              </div>
+              <h2 class="cl-card-title">Built-in SSH Terminal</h2>
+              <span class="cl-card-date">March 25, 2026</span>
+            </div>
+            <ul class="cl-list">
+              <li>Full interactive SSH terminal powered by xterm.js</li>
+              <li>Multi-tab terminal sessions — open multiple SSH connections at once</li>
+              <li>Save SSH sessions with name, host, port, username, and credentials</li>
+              <li>Session grouping and color coding for organization</li>
+              <li>Password auth (via SSH_ASKPASS) and key auth with file picker (.pem, .key, .pub, .ppk)</li>
+              <li>SSH keepalive: <code>ServerAliveInterval=15</code>, <code>TCPKeepAlive=yes</code>, 3 retries</li>
+              <li>Auto-reconnect on disconnect — press Enter to retry</li>
+              <li>Green/red status dots on saved sessions showing active connections</li>
+              <li>5000-line scrollback buffer with dark theme</li>
+              <li>Completely isolated from database client — SSH bugs can't crash DB features</li>
             </ul>
           </div>
         </div>
@@ -319,7 +343,7 @@ import Footer from '~/components/landing/Footer.vue'
 useHead({
   title: 'Changelog — Dibiku',
   meta: [
-    { name: 'description', content: 'See what\'s new in Dibiku — the fast, lightweight database client.' },
+    { name: 'description', content: 'What\'s new in Dibiku — SSH terminal & tunnels, multiple query tabs, metrics board, and more. Version history for the fast database client.' },
   ],
 })
 

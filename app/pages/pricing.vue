@@ -18,7 +18,7 @@ import Footer from '~/components/landing/Footer.vue'
 useHead({
   title: 'Pricing — Dibiku',
   meta: [
-    { name: 'description', content: 'Dibiku pricing — free forever for personal use, Pro at $8/month for teams. SSH tunnel, unlimited connections, and more.' },
+    { name: 'description', content: 'Dibiku pricing — free forever for personal use, Pro at $8/month for teams. SSH terminal & tunnels, unlimited query tabs, connections, and more.' },
   ],
 })
 </script>

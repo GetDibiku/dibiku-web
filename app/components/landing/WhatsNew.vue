@@ -10,7 +10,21 @@
 
         <!-- Features -->
         <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 flex-1">
-          <div class="flex items-center gap-3 group/item">
+          <div class="flex items-center gap-3">
+            <div class="icon-circle" style="background: linear-gradient(135deg, #05966918, #4ec9b008)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="18" rx="2" /><polyline points="7 9 10 12 7 15" /><line x1="13" y1="15" x2="17" y2="15" />
+              </svg>
+            </div>
+            <div>
+              <div class="text-sm font-semibold text-white">SSH Tunnel & Terminal</div>
+              <div class="text-xs text-[var(--color-text-dim)]">Tunnel DB connections + built-in xterm.js shell</div>
+            </div>
+          </div>
+
+          <div class="hidden sm:block w-px h-8 bg-white/[0.08]" />
+
+          <div class="flex items-center gap-3">
             <div class="icon-circle" style="background: linear-gradient(135deg, #0078d418, #00b4d808)">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0078d4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /><line x1="14" y1="4" x2="10" y2="20" stroke-opacity="0.4" />
@@ -24,22 +38,22 @@
 
           <div class="hidden sm:block w-px h-8 bg-white/[0.08]" />
 
-          <div class="flex items-center gap-3 group/item">
-            <div class="icon-circle" style="background: linear-gradient(135deg, #05966918, #4ec9b008)">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><polyline points="9 12 11 14 15 10" />
+          <div class="flex items-center gap-3">
+            <div class="icon-circle" style="background: linear-gradient(135deg, #d9770618, #fbbf2408)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
               </svg>
             </div>
             <div>
-              <div class="text-sm font-semibold text-white">SSH Tunnel Support</div>
-              <div class="text-xs text-[var(--color-text-dim)]">Password & key auth with passphrase</div>
+              <div class="text-sm font-semibold text-white">Test Connection</div>
+              <div class="text-xs text-[var(--color-text-dim)]">Ping through SSH tunnel before saving</div>
             </div>
           </div>
         </div>
 
         <!-- Arrow link -->
         <a href="#features" class="text-xs text-[var(--color-accent)] hover:text-white transition-colors shrink-0 flex items-center gap-1.5 no-underline">
-          See all features
+          See all
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
@@ -63,8 +77,9 @@
 .banner-glow {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 0% 50%, rgba(0, 120, 212, 0.08), transparent 50%),
-              radial-gradient(ellipse at 100% 50%, rgba(5, 150, 105, 0.06), transparent 50%);
+  background: radial-gradient(ellipse at 0% 50%, rgba(5, 150, 105, 0.08), transparent 40%),
+              radial-gradient(ellipse at 50% 50%, rgba(0, 120, 212, 0.05), transparent 40%),
+              radial-gradient(ellipse at 100% 50%, rgba(217, 119, 6, 0.05), transparent 40%);
   pointer-events: none;
 }
 
@@ -77,7 +92,7 @@
   font-weight: 700;
   letter-spacing: 0.04em;
   color: #fff;
-  background: linear-gradient(135deg, #0078d4, #059669);
+  background: linear-gradient(135deg, #059669, #0078d4);
   text-transform: uppercase;
 }
 

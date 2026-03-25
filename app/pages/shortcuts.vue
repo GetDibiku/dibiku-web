@@ -71,7 +71,7 @@ import Footer from '~/components/landing/Footer.vue'
 useHead({
   title: 'Keyboard Shortcuts — Dibiku',
   meta: [
-    { name: 'description', content: 'All 36 keyboard shortcuts in Dibiku — the fast, lightweight database client.' },
+    { name: 'description', content: 'All 36+ keyboard shortcuts in Dibiku — Cmd+T for new query tab, Cmd+Enter to execute, Cmd+K for database picker, and more.' },
   ],
 })
 

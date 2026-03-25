@@ -16,7 +16,7 @@ import Footer from '~/components/landing/Footer.vue'
 useHead({
   title: 'Download — Dibiku',
   meta: [
-    { name: 'description', content: 'Download Dibiku for macOS, Windows, and Linux. Free, fast, lightweight database client.' },
+    { name: 'description', content: 'Download Dibiku for macOS, Windows, and Linux. Free database client with SSH terminal, multi-tab SQL editor, and 4 database engines.' },
   ],
 })
 </script>

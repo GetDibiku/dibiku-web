@@ -18,7 +18,7 @@ import Footer from '~/components/landing/Footer.vue'
 useHead({
   title: 'Compare — Dibiku vs Other Database Clients',
   meta: [
-    { name: 'description', content: 'See how Dibiku compares to other database clients in memory usage, startup time, and scroll performance.' },
+    { name: 'description', content: 'Compare Dibiku to other database clients — memory usage, startup time, scroll performance. Built-in SSH terminal, multi-tab queries, and native speed.' },
   ],
 })
 </script>

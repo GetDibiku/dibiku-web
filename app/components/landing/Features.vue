@@ -170,7 +170,7 @@ function iconBg(feature: typeof FEATURES[number]) {
 }
 
 const HOOD_STATS = [
-  { value: '60+', label: 'Features' },
+  { value: '65+', label: 'Features' },
   { value: '36', label: 'Shortcuts' },
   { value: '4', label: 'Engines' },
   { value: '6+', label: 'Export formats' },
@@ -246,20 +246,23 @@ const DETAIL_CATEGORIES = [
     ],
   },
   {
-    title: 'Connections',
+    title: 'SSH & Connections',
     emoji: '🔌',
     color: '#0078d4',
-    desc: 'Connect securely to any database, anywhere',
+    desc: 'Connect securely to any database, anywhere — with built-in SSH',
     items: [
-      'Multi-connection tabs',
-      'Multi-database sidebar',
-      'SSH tunnel with password or key auth',
-      'SSH key passphrase support',
+      'SSH tunnel for MySQL, PostgreSQL, Redis',
+      'Built-in SSH terminal (xterm.js)',
+      'Multi-tab SSH sessions',
+      'Password and key-based auth',
+      'SSH keepalive & auto-reconnect',
+      'Save SSH sessions with grouping & color',
+      'Test connection (ping) before saving',
       'SSL/TLS with custom certificates',
-      'OS keychain credentials',
+      'OS keychain credential storage',
+      'Multi-connection tabs with session restore',
       'Connection grouping with drag-drop',
       'Connection color coding',
-      'Session restore on restart',
     ],
   },
   {

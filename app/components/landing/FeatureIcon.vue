@@ -61,6 +61,13 @@
       <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
     </template>
 
+    <!-- Terminal -->
+    <template v-else-if="name === 'terminal'">
+      <rect x="2" y="3" width="20" height="18" rx="2" />
+      <polyline points="7 9 10 12 7 15" />
+      <line x1="13" y1="15" x2="17" y2="15" />
+    </template>
+
     <!-- Chart (bar chart) -->
     <template v-else-if="name === 'chart'">
       <line x1="18" y1="20" x2="18" y2="10" />

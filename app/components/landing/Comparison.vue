@@ -3,7 +3,7 @@
     <div class="text-center mb-14">
       <h2 class="text-4xl font-bold text-white mb-3">Less is more</h2>
       <p class="text-[var(--color-text-dim)] text-base max-w-[480px] mx-auto">
-        Full-featured doesn't mean heavy. Dibiku packs an SQL editor, ERD viewer, data grid, and more — while using a fraction of the resources.
+        Full-featured doesn't mean heavy. Dibiku packs a multi-tab SQL editor, SSH terminal, data grid, metrics board, and more — while using a fraction of the resources.
       </p>
     </div>
 

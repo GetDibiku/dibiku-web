@@ -18,7 +18,7 @@ import Footer from '~/components/landing/Footer.vue'
 useHead({
   title: 'Features — Dibiku',
   meta: [
-    { name: 'description', content: 'Explore all features of Dibiku — SQL editor, virtual data grid, inline editing, SSH tunnels, data masking, and 36+ keyboard shortcuts.' },
+    { name: 'description', content: 'All Dibiku features — multi-tab SQL editor, built-in SSH terminal & tunnels, virtual data grid, inline editing, metrics board, data masking, and 36+ keyboard shortcuts.' },
   ],
 })
 </script>
