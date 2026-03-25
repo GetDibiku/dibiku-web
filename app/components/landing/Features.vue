@@ -3,14 +3,14 @@
     <!-- Section header -->
     <div class="text-center mb-20">
       <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] text-sm text-[var(--color-text-muted)] mb-5">
-        Why Dibiku
+        {{ $t('features.badge') }}
       </div>
       <h2 class="text-[clamp(32px,4vw,48px)] font-bold text-white mb-4 leading-tight">
-        Everything you need,<br />
-        <span class="gradient-text">nothing you don't</span>
+        {{ $t('features.headline1') }}<br />
+        <span class="gradient-text">{{ $t('features.headline2') }}</span>
       </h2>
       <p class="text-[var(--color-text-muted)] text-base max-w-[500px] mx-auto leading-relaxed">
-        No bloat. No waiting around. A fast, native app that launches instantly and stays out of your way.
+        {{ $t('features.subtitle') }}
       </p>
     </div>
 
@@ -25,20 +25,20 @@
               <div class="bento-icon" :style="iconBg(FEATURES[0])">
                 <FeatureIcon :name="FEATURES[0].icon" :color="FEATURES[0].gradient[0]" :size="24" />
               </div>
-              <span v-if="FEATURES[0].isNew" class="new-badge">NEW</span>
+              <span v-if="FEATURES[0].isNew" class="new-badge">{{ $t('features.new') }}</span>
             </div>
-            <h3 class="text-[22px] font-bold text-white mb-2 mt-5">{{ FEATURES[0].title }}</h3>
-            <p class="text-sm text-[var(--color-text-muted)] leading-relaxed max-w-[380px] mb-5">{{ FEATURES[0].desc }}</p>
+            <h3 class="text-[22px] font-bold text-white mb-2 mt-5">{{ featureCards[0].title }}</h3>
+            <p class="text-sm text-[var(--color-text-muted)] leading-relaxed max-w-[380px] mb-5">{{ featureCards[0].desc }}</p>
             <div class="flex flex-wrap gap-2">
-              <span v-for="h in FEATURES[0].highlights" :key="h" class="bento-tag" :style="{ borderColor: FEATURES[0].gradient[0] + '30', color: FEATURES[0].gradient[0] }">{{ h }}</span>
+              <span v-for="h in featureCards[0].highlights" :key="h" class="bento-tag" :style="{ borderColor: FEATURES[0].gradient[0] + '30', color: FEATURES[0].gradient[0] }">{{ h }}</span>
             </div>
           </div>
           <div class="shrink-0 flex flex-col items-center md:items-end justify-center">
             <div
               class="text-[64px] md:text-[80px] font-extrabold leading-none tracking-tighter"
               :style="{ background: `linear-gradient(135deg, ${FEATURES[0].gradient[0]}, ${FEATURES[0].gradient[1]})`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }"
-            >{{ FEATURES[0].stat }}</div>
-            <div class="text-xs text-[var(--color-text-dim)] mt-1 tracking-wide uppercase">{{ FEATURES[0].statLabel }}</div>
+            >{{ featureCards[0].stat }}</div>
+            <div class="text-xs text-[var(--color-text-dim)] mt-1 tracking-wide uppercase">{{ featureCards[0].statLabel }}</div>
           </div>
         </div>
       </div>
@@ -46,7 +46,7 @@
       <!-- Feature cards -->
       <div
         v-for="(feature, i) in FEATURES.slice(1)"
-        :key="feature.title"
+        :key="feature.icon"
         class="bento-card group"
         @mouseenter="hoverIdx = i"
         @mouseleave="hoverIdx = null"
@@ -60,20 +60,20 @@
               <div class="bento-icon" :style="iconBg(feature)">
                 <FeatureIcon :name="feature.icon" :color="feature.gradient[0]" :size="18" />
               </div>
-              <span v-if="feature.isNew" class="new-badge">NEW</span>
+              <span v-if="feature.isNew" class="new-badge">{{ $t('features.new') }}</span>
             </div>
             <div class="text-right">
-              <span class="text-[26px] font-extrabold leading-none tracking-tight" :style="{ color: feature.gradient[0] }">{{ feature.stat }}</span>
-              <div class="text-[10px] text-[var(--color-text-dim)] mt-0.5">{{ feature.statLabel }}</div>
+              <span class="text-[26px] font-extrabold leading-none tracking-tight" :style="{ color: feature.gradient[0] }">{{ featureCards[i + 1]?.stat }}</span>
+              <div class="text-[10px] text-[var(--color-text-dim)] mt-0.5">{{ featureCards[i + 1]?.statLabel }}</div>
             </div>
           </div>
 
-          <h3 class="text-[15px] font-semibold text-white mb-1.5">{{ feature.title }}</h3>
-          <p class="text-[13px] text-[var(--color-text-muted)] leading-relaxed mb-4">{{ feature.desc }}</p>
+          <h3 class="text-[15px] font-semibold text-white mb-1.5">{{ featureCards[i + 1]?.title }}</h3>
+          <p class="text-[13px] text-[var(--color-text-muted)] leading-relaxed mb-4">{{ featureCards[i + 1]?.desc }}</p>
 
           <!-- Highlight tags -->
           <div class="flex flex-wrap gap-1.5">
-            <span v-for="h in feature.highlights" :key="h" class="bento-tag-sm" :style="{ color: feature.gradient[0] + 'cc' }">{{ h }}</span>
+            <span v-for="h in (featureCards[i + 1]?.highlights ?? [])" :key="h" class="bento-tag-sm" :style="{ color: feature.gradient[0] + 'cc' }">{{ h }}</span>
           </div>
         </div>
       </div>
@@ -83,13 +83,13 @@
     <div class="mt-28 pt-20 border-t border-white/[0.06]">
       <div class="text-center mb-14">
         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] text-sm text-[var(--color-text-muted)] mb-5">
-          Under the hood
+          {{ $t('features.hoodBadge') }}
         </div>
         <h3 class="text-[clamp(28px,3.5vw,40px)] font-bold text-white mb-3">
-          Packed with power,<br />
-          <span class="gradient-text">designed for speed</span>
+          {{ $t('features.hoodHeadline1') }}<br />
+          <span class="gradient-text">{{ $t('features.hoodHeadline2') }}</span>
         </h3>
-        <p class="text-sm text-[var(--color-text-dim)] max-w-[440px] mx-auto leading-relaxed">Every detail crafted to keep you in the flow.</p>
+        <p class="text-sm text-[var(--color-text-dim)] max-w-[440px] mx-auto leading-relaxed">{{ $t('features.hoodSubtitle') }}</p>
       </div>
 
       <!-- Category pills -->
@@ -140,7 +140,7 @@
           <div class="hood-visual" :style="{ borderColor: activeCat.color + '15', background: `linear-gradient(160deg, ${activeCat.color}08, transparent 70%)` }">
             <div class="text-4xl mb-2">{{ activeCat.emoji }}</div>
             <div class="text-2xl font-bold text-white">{{ activeCat.items.length }}</div>
-            <div class="text-[10px] text-[var(--color-text-dim)] uppercase tracking-widest mt-1">features</div>
+            <div class="text-[10px] text-[var(--color-text-dim)] uppercase tracking-widest mt-1">{{ $t('features.features') }}</div>
           </div>
         </div>
       </div>
@@ -158,130 +158,58 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { FEATURES } from '~/config/landing'
 import FeatureIcon from './FeatureIcon.vue'
 
+const { t, tm, rt } = useI18n()
 const hoverIdx = ref<number | null>(null)
 const activeCategory = ref(0)
-const activeCat = computed(() => DETAIL_CATEGORIES[activeCategory.value])
 
 function iconBg(feature: typeof FEATURES[number]) {
   return { background: `linear-gradient(135deg, ${feature.gradient[0]}18, ${feature.gradient[1]}08)` }
 }
 
-const HOOD_STATS = [
-  { value: '65+', label: 'Features' },
-  { value: '36', label: 'Shortcuts' },
-  { value: '4', label: 'Engines' },
-  { value: '6+', label: 'Export formats' },
+const CARD_KEYS = ['sqlEditor', 'dataGrid', 'ssh', 'security', 'keyboard', 'engines', 'export', 'metrics'] as const
+
+const featureCards = computed(() =>
+  CARD_KEYS.map(key => ({
+    title: t(`features.cards.${key}.title`),
+    desc: t(`features.cards.${key}.desc`),
+    stat: t(`features.cards.${key}.stat`),
+    statLabel: t(`features.cards.${key}.statLabel`),
+    highlights: tm(`features.cards.${key}.highlights`).map((h: any) => rt(h)),
+  }))
+)
+
+const HOOD_KEYS = ['sqlEditor', 'dataGrid', 'dbTools', 'importExport', 'connections', 'experience'] as const
+const HOOD_META = [
+  { emoji: '✏️', color: '#60a5fa' },
+  { emoji: '📊', color: '#4ec9b0' },
+  { emoji: '🛠️', color: '#e6922e' },
+  { emoji: '📦', color: '#c586c0' },
+  { emoji: '🔌', color: '#0078d4' },
+  { emoji: '✨', color: '#f44747' },
 ]
 
-const DETAIL_CATEGORIES = [
-  {
-    title: 'SQL Editor',
-    emoji: '✏️',
-    color: '#60a5fa',
-    desc: 'A full IDE-grade editor right in your database client',
-    items: [
-      'Full syntax highlighting & IntelliSense',
-      'Schema-aware autocomplete',
-      'Multiple query tabs per database (Cmd+T)',
-      'Multi-statement execution with result tabs',
-      'SQL formatter (Cmd+Shift+F)',
-      'Query variables — :user_id placeholders',
-      'EXPLAIN query visualizer',
-      'Saved queries & query history',
-      'Query snippets per engine',
-      'Tab state persisted across sessions',
-    ],
-  },
-  {
-    title: 'Data Grid',
-    emoji: '📊',
-    color: '#4ec9b0',
-    desc: 'Spreadsheet-like editing for your database',
-    items: [
-      'Virtual scrolling — millions of rows',
-      'Click-to-edit inline cells',
-      'Column sort, resize & reorder',
-      'Sticky first column',
-      'Multi-row select & drag-to-select',
-      'Server-side pagination',
-      'Search with match highlighting',
-      'Cmd+C copy / Cmd+V paste rows',
-    ],
-  },
-  {
-    title: 'Database Tools',
-    emoji: '🛠️',
-    color: '#e6922e',
-    desc: 'Everything you need to manage your database',
-    items: [
-      'Schema diff between connections',
-      'Data masking for sensitive columns',
-      'Foreign key viewer & navigation',
-      'Column statistics on right-click',
-      'Row comparison (select 2 rows)',
-      'Backup & restore (.sql)',
-      'Slow query warning with EXPLAIN',
-      'Create / duplicate / drop tables',
-      'Metrics Board — SQL-powered charts',
-      'Auto-refresh dashboard cards',
-      'Full-screen chart detail with data table',
-      'Export charts as PDF',
-    ],
-  },
-  {
-    title: 'Import & Export',
-    emoji: '📦',
-    color: '#c586c0',
-    desc: 'Move data in and out effortlessly',
-    items: [
-      'Export as CSV, JSON, SQL or PDF',
-      'Import from CSV with column mapping',
-      'Copy rows as PHP, Python, Go, Ruby, YAML',
-      'Copy CREATE TABLE statements',
-      'Export full table via right-click',
-      'Connection import/export',
-    ],
-  },
-  {
-    title: 'SSH & Connections',
-    emoji: '🔌',
-    color: '#0078d4',
-    desc: 'Connect securely to any database, anywhere — with built-in SSH',
-    items: [
-      'SSH tunnel for MySQL, PostgreSQL, Redis',
-      'Built-in SSH terminal (xterm.js)',
-      'Multi-tab SSH sessions',
-      'Password and key-based auth',
-      'SSH keepalive & auto-reconnect',
-      'Save SSH sessions with grouping & color',
-      'Test connection (ping) before saving',
-      'SSL/TLS with custom certificates',
-      'OS keychain credential storage',
-      'Multi-connection tabs with session restore',
-      'Connection grouping with drag-drop',
-      'Connection color coding',
-    ],
-  },
-  {
-    title: 'Experience',
-    emoji: '✨',
-    color: '#f44747',
-    desc: 'Polished to the last pixel',
-    items: [
-      '36 keyboard shortcuts',
-      'Command palette (Cmd+P)',
-      'Dark & light themes',
-      'Pin favorite tables to top',
-      'Auto-update with progress',
-      'First-run onboarding',
-      'OS notifications for long queries',
-      'Reconnect on connection drop',
-    ],
-  },
-]
+const DETAIL_CATEGORIES = computed(() =>
+  HOOD_KEYS.map((key, i) => ({
+    title: t(`features.hood.${key}.title`),
+    desc: t(`features.hood.${key}.desc`),
+    items: tm(`features.hood.${key}.items`).map((h: any) => rt(h)),
+    emoji: HOOD_META[i].emoji,
+    color: HOOD_META[i].color,
+  }))
+)
+
+const activeCat = computed(() => DETAIL_CATEGORIES.value[activeCategory.value])
+
+const HOOD_STATS = computed(() => [
+  { value: '65+', label: t('features.hoodFeatures') },
+  { value: '36', label: t('features.hoodShortcuts') },
+  { value: '4', label: t('features.hoodEngines') },
+  { value: '6+', label: t('features.hoodExportFormats') },
+])
 </script>
 
 <style scoped>

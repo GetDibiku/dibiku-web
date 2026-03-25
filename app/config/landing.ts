@@ -30,7 +30,7 @@ export const FEATURES = [
   },
   {
     title: 'SSH tunnel & terminal',
-    desc: 'Connect to remote databases through SSH tunnels with password or key auth. Plus a built-in SSH terminal with xterm.js — multi-tab sessions, keepalive, auto-reconnect, and saved credentials.',
+    desc: 'Connect to remote databases through SSH tunnels with password or key auth. Plus a built-in SSH terminal with xterm.js - multi-tab sessions, keepalive, auto-reconnect, and saved credentials.',
     stat: 'Built-in',
     statLabel: 'SSH terminal',
     gradient: ['#059669', '#4ec9b0'],
@@ -50,7 +50,7 @@ export const FEATURES = [
   },
   {
     title: 'Keyboard-first workflow',
-    desc: '36 keyboard shortcuts, command palette, multi-connection tabs, query tabs with Cmd+T/W, session restore — hands never leave the keyboard.',
+    desc: '36 keyboard shortcuts, command palette, multi-connection tabs, query tabs with Cmd+T/W, session restore - hands never leave the keyboard.',
     stat: '36',
     statLabel: 'shortcuts',
     gradient: ['#d97706', '#fbbf24'],
@@ -77,7 +77,7 @@ export const FEATURES = [
   },
   {
     title: 'Metrics Board',
-    desc: 'Write SQL, pick a chart type, and see live visualizations on a dashboard. Multiple layouts, full-screen detail view, and export to PDF — your data, always up to date.',
+    desc: 'Write SQL, pick a chart type, and see live visualizations on a dashboard. Multiple layouts, full-screen detail view, and export to PDF - your data, always up to date.',
     stat: '5',
     statLabel: 'chart types',
     gradient: ['#06b6d4', '#22d3ee'],
@@ -91,7 +91,7 @@ export const PRICING = [
     name: 'Free',
     price: '$0',
     period: 'forever',
-    desc: 'All features included — no limits, no account required',
+    desc: 'All features included - no limits, no account required',
     features: [
       'MySQL, PostgreSQL, SQLite, Redis',
       'SSH terminal & tunnel support',

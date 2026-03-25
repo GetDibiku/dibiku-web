@@ -15,10 +15,13 @@ import Features from '~/components/landing/Features.vue'
 import DownloadCTA from '~/components/landing/DownloadCTA.vue'
 import Footer from '~/components/landing/Footer.vue'
 
+const { t } = useI18n()
+const localePath = useLocalePath()
+
 useHead({
-  title: 'Features — Dibiku',
+  title: computed(() => t('seo.featuresTitle')),
   meta: [
-    { name: 'description', content: 'All Dibiku features — multi-tab SQL editor, built-in SSH terminal & tunnels, virtual data grid, inline editing, metrics board, data masking, and 36+ keyboard shortcuts.' },
+    { name: 'description', content: computed(() => t('seo.featuresDesc')) },
   ],
 })
 </script>

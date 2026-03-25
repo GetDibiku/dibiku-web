@@ -10,18 +10,18 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="6" y1="8" x2="6" y2="8" stroke-width="3"/><line x1="10" y1="8" x2="10" y2="8" stroke-width="3"/><line x1="14" y1="8" x2="14" y2="8" stroke-width="3"/><line x1="18" y1="8" x2="18" y2="8" stroke-width="3"/><line x1="8" y1="16" x2="16" y2="16"/></svg>
           </div>
           <div>
-            <h1 class="text-3xl font-bold text-white">Keyboard Shortcuts</h1>
-            <p class="text-sm text-[var(--color-text-dim)] mt-1">{{ allShortcuts.length }} shortcuts to keep your hands on the keyboard</p>
+            <h1 class="text-3xl font-bold text-white">{{ $t('shortcuts.title') }}</h1>
+            <p class="text-sm text-[var(--color-text-dim)] mt-1">{{ $t('shortcuts.subtitle', { count: allShortcuts.length }) }}</p>
           </div>
         </div>
       </div>
 
       <!-- Categories -->
       <div class="space-y-10">
-        <section v-for="cat in categories" :key="cat.title">
+        <section v-for="cat in categories" :key="cat.titleKey">
           <div class="flex items-center gap-3 mb-4 pb-3 border-b border-white/[0.06]">
             <span class="text-base">{{ cat.emoji }}</span>
-            <h2 class="text-[15px] font-semibold text-white">{{ cat.title }}</h2>
+            <h2 class="text-[15px] font-semibold text-white">{{ $t(cat.titleKey) }}</h2>
             <span class="text-[11px] text-[var(--color-text-dim)] ml-auto">{{ cat.shortcuts.length }} shortcuts</span>
           </div>
           <div class="grid sm:grid-cols-2 gap-x-10 gap-y-0">
@@ -30,7 +30,7 @@
               :key="s.keys"
               class="flex items-center justify-between py-2.5 border-b border-white/[0.03] group"
             >
-              <span class="text-[13px] text-[var(--color-text-muted)] group-hover:text-white transition-colors">{{ s.desc }}</span>
+              <span class="text-[13px] text-[var(--color-text-muted)] group-hover:text-white transition-colors">{{ $t(s.descKey) }}</span>
               <div class="flex gap-1 shrink-0 ml-4">
                 <kbd v-for="k in s.keys.split('+')" :key="k" class="sc-kbd">{{ k.trim() }}</kbd>
               </div>
@@ -41,19 +41,19 @@
 
       <!-- Tips -->
       <div class="mt-16 p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
-        <h3 class="text-sm font-semibold text-white mb-3">Tips</h3>
+        <h3 class="text-sm font-semibold text-white mb-3">{{ $t('shortcuts.tipsTitle') }}</h3>
         <ul class="space-y-2 text-[13px] text-[var(--color-text-muted)]">
           <li class="flex items-start gap-2">
             <span class="text-[var(--color-accent)] mt-0.5">•</span>
-            Press <kbd class="sc-kbd">⌘</kbd><kbd class="sc-kbd">?</kbd> inside Dibiku to open the shortcuts cheat sheet.
+            {{ $t('shortcuts.tip1') }}
           </li>
           <li class="flex items-start gap-2">
             <span class="text-[var(--color-accent)] mt-0.5">•</span>
-            On Windows/Linux, replace <kbd class="sc-kbd">⌘</kbd> with <kbd class="sc-kbd">Ctrl</kbd>.
+            {{ $t('shortcuts.tip2') }}
           </li>
           <li class="flex items-start gap-2">
             <span class="text-[var(--color-accent)] mt-0.5">•</span>
-            Use <kbd class="sc-kbd">⌘</kbd><kbd class="sc-kbd">P</kbd> to open the command palette for quick navigation.
+            {{ $t('shortcuts.tip3') }}
           </li>
         </ul>
       </div>
@@ -68,75 +68,78 @@
 import Navbar from '~/components/landing/Navbar.vue'
 import Footer from '~/components/landing/Footer.vue'
 
+const { t } = useI18n()
+const localePath = useLocalePath()
+
 useHead({
-  title: 'Keyboard Shortcuts — Dibiku',
+  title: computed(() => t('seo.shortcutsTitle')),
   meta: [
-    { name: 'description', content: 'All 36+ keyboard shortcuts in Dibiku — Cmd+T for new query tab, Cmd+Enter to execute, Cmd+K for database picker, and more.' },
+    { name: 'description', content: computed(() => t('seo.shortcutsDesc')) },
   ],
 })
 
 const categories = [
   {
-    title: 'General',
+    titleKey: 'shortcuts.general',
     emoji: '🧭',
     shortcuts: [
-      { keys: '⌘+P', desc: 'Command palette' },
-      { keys: '⌘+K', desc: 'Switch database' },
-      { keys: '⌘+N', desc: 'New connection / Add row' },
-      { keys: '⌘+W', desc: 'Close tab' },
-      { keys: '⌘+Shift+T', desc: 'Reopen closed tab' },
-      { keys: 'Ctrl+Tab', desc: 'Next connection tab' },
-      { keys: '⌘+J', desc: 'Toggle sidebar' },
-      { keys: '⌘+,', desc: 'Open settings' },
-      { keys: '⌘+?', desc: 'Shortcuts cheat sheet' },
-      { keys: 'Escape', desc: 'Close panel / dialog' },
+      { keys: '⌘+P', descKey: 'shortcuts.s.commandPalette' },
+      { keys: '⌘+K', descKey: 'shortcuts.s.switchDb' },
+      { keys: '⌘+N', descKey: 'shortcuts.s.newConn' },
+      { keys: '⌘+W', descKey: 'shortcuts.s.closeTab' },
+      { keys: '⌘+Shift+T', descKey: 'shortcuts.s.reopenTab' },
+      { keys: 'Ctrl+Tab', descKey: 'shortcuts.s.nextTab' },
+      { keys: '⌘+J', descKey: 'shortcuts.s.toggleSidebar' },
+      { keys: '⌘+,', descKey: 'shortcuts.s.openSettings' },
+      { keys: '⌘+?', descKey: 'shortcuts.s.shortcutsSheet' },
+      { keys: 'Escape', descKey: 'shortcuts.s.closePanel' },
     ],
   },
   {
-    title: 'Navigation',
+    titleKey: 'shortcuts.navigation',
     emoji: '📍',
     shortcuts: [
-      { keys: '⌘+1', desc: 'Data view' },
-      { keys: '⌘+2', desc: 'Structure view' },
-      { keys: '⌘+3', desc: 'Query editor' },
-      { keys: '⌘+4', desc: 'History' },
-      { keys: '⌘+5', desc: 'Metrics board' },
-      { keys: '⌘+B', desc: 'Saved queries panel' },
-      { keys: '⌘+L', desc: 'Toggle query log' },
-      { keys: '⌘+F', desc: 'Filter / Grid search' },
-      { keys: '⌘+R', desc: 'Refresh table data' },
+      { keys: '⌘+1', descKey: 'shortcuts.s.dataView' },
+      { keys: '⌘+2', descKey: 'shortcuts.s.structureView' },
+      { keys: '⌘+3', descKey: 'shortcuts.s.queryEditorView' },
+      { keys: '⌘+4', descKey: 'shortcuts.s.history' },
+      { keys: '⌘+5', descKey: 'shortcuts.s.metricsBoard' },
+      { keys: '⌘+B', descKey: 'shortcuts.s.savedQueries' },
+      { keys: '⌘+L', descKey: 'shortcuts.s.toggleQueryLog' },
+      { keys: '⌘+F', descKey: 'shortcuts.s.filterSearch' },
+      { keys: '⌘+R', descKey: 'shortcuts.s.refreshTable' },
     ],
   },
   {
-    title: 'Query Editor',
+    titleKey: 'shortcuts.queryEditor',
     emoji: '✏️',
     shortcuts: [
-      { keys: '⌘+Enter', desc: 'Execute query' },
-      { keys: '⌘+Shift+Enter', desc: 'Execute selected text' },
-      { keys: '⌘+E', desc: 'Run EXPLAIN' },
-      { keys: '⌘+I', desc: 'Query snippets' },
-      { keys: '⌘+Shift+F', desc: 'Format SQL' },
-      { keys: '⌘+S', desc: 'Save query / Save edits' },
-      { keys: '⌘+/', desc: 'Toggle comment' },
+      { keys: '⌘+Enter', descKey: 'shortcuts.s.executeQuery' },
+      { keys: '⌘+Shift+Enter', descKey: 'shortcuts.s.executeSelected' },
+      { keys: '⌘+E', descKey: 'shortcuts.s.runExplain' },
+      { keys: '⌘+I', descKey: 'shortcuts.s.querySnippets' },
+      { keys: '⌘+Shift+F', descKey: 'shortcuts.s.formatSql' },
+      { keys: '⌘+S', descKey: 'shortcuts.s.saveQuery' },
+      { keys: '⌘+/', descKey: 'shortcuts.s.toggleComment' },
     ],
   },
   {
-    title: 'Data Grid',
+    titleKey: 'shortcuts.dataGrid',
     emoji: '📊',
     shortcuts: [
-      { keys: '⌘+C', desc: 'Copy selected rows' },
-      { keys: '⌘+V', desc: 'Paste rows' },
-      { keys: '⌘+Shift+C', desc: 'Copy as INSERT' },
-      { keys: '⌘+Shift+E', desc: 'Export as CSV' },
-      { keys: '⌘+A', desc: 'Select all rows' },
-      { keys: '⌘+Z', desc: 'Undo cell edit' },
-      { keys: '⌘+D', desc: 'Duplicate query to editor' },
-      { keys: '⌘+G', desc: 'Go to page' },
-      { keys: '⌘+Shift+H', desc: 'Clear history' },
-      { keys: '↑ / ↓', desc: 'Navigate rows' },
-      { keys: 'Enter', desc: 'Edit cell' },
-      { keys: 'Tab', desc: 'Next cell' },
-      { keys: 'Delete', desc: 'Delete selected rows' },
+      { keys: '⌘+C', descKey: 'shortcuts.s.copyRows' },
+      { keys: '⌘+V', descKey: 'shortcuts.s.pasteRows' },
+      { keys: '⌘+Shift+C', descKey: 'shortcuts.s.copyInsert' },
+      { keys: '⌘+Shift+E', descKey: 'shortcuts.s.exportCsv' },
+      { keys: '⌘+A', descKey: 'shortcuts.s.selectAll' },
+      { keys: '⌘+Z', descKey: 'shortcuts.s.undoEdit' },
+      { keys: '⌘+D', descKey: 'shortcuts.s.dupToEditor' },
+      { keys: '⌘+G', descKey: 'shortcuts.s.goToPage' },
+      { keys: '⌘+Shift+H', descKey: 'shortcuts.s.clearHistory' },
+      { keys: '↑ / ↓', descKey: 'shortcuts.s.navRows' },
+      { keys: 'Enter', descKey: 'shortcuts.s.editCell' },
+      { keys: 'Tab', descKey: 'shortcuts.s.nextCell' },
+      { keys: 'Delete', descKey: 'shortcuts.s.deleteRows' },
     ],
   },
 ]

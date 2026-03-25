@@ -5,7 +5,7 @@
       <div class="relative flex flex-col sm:flex-row items-center gap-6 sm:gap-10 p-6 sm:p-8">
         <!-- Badge -->
         <div class="flex items-center gap-3 shrink-0">
-          <span class="whats-new-pill">What's New</span>
+          <span class="whats-new-pill">{{ $t('whatsNew.badge') }}</span>
         </div>
 
         <!-- Features -->
@@ -17,8 +17,8 @@
               </svg>
             </div>
             <div>
-              <div class="text-sm font-semibold text-white">SSH Tunnel & Terminal</div>
-              <div class="text-xs text-[var(--color-text-dim)]">Tunnel DB connections + built-in xterm.js shell</div>
+              <div class="text-sm font-semibold text-white">{{ $t('whatsNew.sshTitle') }}</div>
+              <div class="text-xs text-[var(--color-text-dim)]">{{ $t('whatsNew.sshDesc') }}</div>
             </div>
           </div>
 
@@ -31,8 +31,8 @@
               </svg>
             </div>
             <div>
-              <div class="text-sm font-semibold text-white">Multiple Query Tabs</div>
-              <div class="text-xs text-[var(--color-text-dim)]">Cmd+T to open, per-database scoping</div>
+              <div class="text-sm font-semibold text-white">{{ $t('whatsNew.queryTabsTitle') }}</div>
+              <div class="text-xs text-[var(--color-text-dim)]">{{ $t('whatsNew.queryTabsDesc') }}</div>
             </div>
           </div>
 
@@ -45,15 +45,15 @@
               </svg>
             </div>
             <div>
-              <div class="text-sm font-semibold text-white">Test Connection</div>
-              <div class="text-xs text-[var(--color-text-dim)]">Ping through SSH tunnel before saving</div>
+              <div class="text-sm font-semibold text-white">{{ $t('whatsNew.testConnTitle') }}</div>
+              <div class="text-xs text-[var(--color-text-dim)]">{{ $t('whatsNew.testConnDesc') }}</div>
             </div>
           </div>
         </div>
 
         <!-- Arrow link -->
         <a href="#features" class="text-xs text-[var(--color-accent)] hover:text-white transition-colors shrink-0 flex items-center gap-1.5 no-underline">
-          See all
+          {{ $t('whatsNew.seeAll') }}
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>

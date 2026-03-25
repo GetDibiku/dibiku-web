@@ -13,10 +13,13 @@ import Navbar from '~/components/landing/Navbar.vue'
 import DownloadCTA from '~/components/landing/DownloadCTA.vue'
 import Footer from '~/components/landing/Footer.vue'
 
+const { t } = useI18n()
+const localePath = useLocalePath()
+
 useHead({
-  title: 'Download — Dibiku',
+  title: computed(() => t('seo.downloadTitle')),
   meta: [
-    { name: 'description', content: 'Download Dibiku for macOS. Free database client with SSH terminal, multi-tab SQL editor, and 4 database engines.' },
+    { name: 'description', content: computed(() => t('seo.downloadDesc')) },
   ],
 })
 </script>

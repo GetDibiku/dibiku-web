@@ -15,10 +15,13 @@ import Comparison from '~/components/landing/Comparison.vue'
 import DownloadCTA from '~/components/landing/DownloadCTA.vue'
 import Footer from '~/components/landing/Footer.vue'
 
+const { t } = useI18n()
+const localePath = useLocalePath()
+
 useHead({
-  title: 'Compare — Dibiku vs Other Database Clients',
+  title: computed(() => t('seo.compareTitle')),
   meta: [
-    { name: 'description', content: 'Compare Dibiku to other database clients — memory usage, startup time, scroll performance. Built-in SSH terminal, multi-tab queries, and native speed.' },
+    { name: 'description', content: computed(() => t('seo.compareDesc')) },
   ],
 })
 </script>

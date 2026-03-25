@@ -1,8 +1,8 @@
 <template>
   <section class="max-w-[1100px] mx-auto px-6 pt-20 pb-24" id="pricing">
     <div class="text-center mb-12">
-      <h2 class="text-4xl font-bold text-white mb-3">Free and open</h2>
-      <p class="text-[var(--color-text-dim)] text-base">Everything you need to work with your databases — no strings attached.</p>
+      <h2 class="text-4xl font-bold text-white mb-3">{{ $t('pricing.headline') }}</h2>
+      <p class="text-[var(--color-text-dim)] text-base">{{ $t('pricing.subtitle') }}</p>
     </div>
 
     <div class="grid gap-5 max-w-[380px] mx-auto">
@@ -33,10 +33,10 @@
         <!-- Price -->
         <div class="flex items-baseline gap-1 mb-2">
           <span class="text-[42px] font-bold text-white">{{ plan.price }}</span>
-          <span class="text-sm text-[var(--color-text-dim)]">{{ plan.period }}</span>
+          <span class="text-sm text-[var(--color-text-dim)]">{{ $t('pricing.period') }}</span>
         </div>
 
-        <p class="text-sm text-[var(--color-text-dim)] mb-6 leading-relaxed">{{ plan.desc }}</p>
+        <p class="text-sm text-[var(--color-text-dim)] mb-6 leading-relaxed">{{ $t('pricing.desc') }}</p>
 
         <!-- Features -->
         <ul class="space-y-2.5 mb-8">
@@ -57,7 +57,7 @@
             ? 'bg-gradient-to-r from-[var(--color-accent)] to-[#0090e0] text-white hover:opacity-90 shadow-lg shadow-[var(--color-accent)]/20'
             : 'bg-white/[0.06] text-[#ccc] border border-white/10 hover:bg-white/[0.1]'"
         >
-          {{ plan.cta }}
+          {{ $t('pricing.downloadFree') }}
         </button>
       </div>
     </div>

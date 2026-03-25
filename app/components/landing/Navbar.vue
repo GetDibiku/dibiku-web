@@ -2,7 +2,7 @@
   <nav class="nav-root" :class="{ 'nav-scrolled': scrolled }">
     <div class="max-w-[1100px] mx-auto px-6 flex items-center justify-between" :style="{ height: scrolled ? '56px' : '64px', transition: 'height 0.3s' }">
       <!-- Logo -->
-      <NuxtLink to="/" class="nav-logo">
+      <NuxtLink :to="localePath('/')" class="nav-logo">
         <img src="/logo-icon.png" alt="Dibiku" class="nav-logo-icon" />
         <span class="nav-logo-text">Dibiku</span>
       </NuxtLink>
@@ -14,19 +14,40 @@
           <NuxtLink
             v-for="link in navLinks"
             :key="link.to"
-            :to="link.to"
+            :to="localePath(link.to)"
             class="nav-pill"
             :class="{ 'nav-pill-active': isActive(link.to) }"
           >
-            {{ link.label }}
+            {{ $t(link.labelKey) }}
           </NuxtLink>
         </div>
 
         <!-- CTA -->
-        <NuxtLink to="/download" class="nav-cta">
+        <NuxtLink :to="localePath('/download')" class="nav-cta">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-          Download
+          {{ $t('nav.download') }}
         </NuxtLink>
+
+        <!-- Language dropdown -->
+        <div class="relative ml-2">
+          <button @click="langOpen = !langOpen" class="nav-lang-btn" title="Language">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </button>
+          <Transition name="dropdown">
+            <div v-if="langOpen" class="nav-lang-dropdown" @mouseleave="langOpen = false">
+              <button
+                v-for="lang in availableLocales"
+                :key="lang.code"
+                @click="setLocale(lang.code); langOpen = false"
+                class="nav-lang-option"
+                :class="{ 'nav-lang-active': locale === lang.code }"
+              >
+                <span>{{ lang.flag }}</span>
+                <span>{{ lang.label }}</span>
+              </button>
+            </div>
+          </Transition>
+        </div>
       </div>
 
       <!-- Mobile menu button -->
@@ -42,14 +63,23 @@
         <NuxtLink
           v-for="link in navLinks"
           :key="link.to"
-          :to="link.to"
+          :to="localePath(link.to)"
           @click="mobileOpen = false"
           class="nav-mobile-link"
         >
-          {{ link.label }}
+          {{ $t(link.labelKey) }}
         </NuxtLink>
-        <NuxtLink to="/download" @click="mobileOpen = false" class="nav-mobile-cta">
-          Download
+        <button
+          v-for="lang in availableLocales.filter(l => l.code !== locale)"
+          :key="lang.code"
+          @click="setLocale(lang.code); mobileOpen = false"
+          class="nav-mobile-link"
+          style="text-align: left; width: 100%; border: none; background: none; cursor: pointer; font-size: 14px; color: var(--color-text-muted)"
+        >
+          {{ lang.flag }} {{ lang.label }}
+        </button>
+        <NuxtLink :to="localePath('/download')" @click="mobileOpen = false" class="nav-mobile-cta">
+          {{ $t('nav.download') }}
         </NuxtLink>
       </div>
     </Transition>
@@ -57,20 +87,29 @@
 </template>
 
 <script setup lang="ts">
+const { locale, setLocale } = useI18n()
+const localePath = useLocalePath()
 const route = useRoute()
 const mobileOpen = ref(false)
 const scrolled = ref(false)
+const langOpen = ref(false)
 
 const navLinks = [
-  { label: 'Features', to: '/features' },
-  { label: 'Compare', to: '/compare' },
-  { label: 'Pricing', to: '/pricing' },
-  { label: 'Shortcuts', to: '/shortcuts' },
-  { label: 'About', to: '/about' },
+  { labelKey: 'nav.features', to: '/features' },
+  { labelKey: 'nav.compare', to: '/compare' },
+  { labelKey: 'nav.pricing', to: '/pricing' },
+  { labelKey: 'nav.shortcuts', to: '/shortcuts' },
+  { labelKey: 'nav.about', to: '/about' },
+]
+
+const availableLocales = [
+  { code: 'en', label: 'English', flag: '🇺🇸' },
+  { code: 'id', label: 'Bahasa Indonesia', flag: '🇮🇩' },
 ]
 
 function isActive(path: string) {
-  return route.path === path
+  const currentPath = route.path.replace(/^\/id/, '') || '/'
+  return currentPath === path
 }
 
 onMounted(() => {
@@ -134,7 +173,7 @@ onMounted(() => {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 12px;
-  margin-right: 14px;
+  margin-right: 10px;
 }
 
 .nav-pill {
@@ -158,6 +197,69 @@ onMounted(() => {
   color: white;
   background: rgba(255, 255, 255, 0.08);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Language dropdown */
+.nav-lang-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.nav-lang-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+.nav-lang-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  min-width: 170px;
+  background: rgba(30, 30, 32, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 4px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(16px);
+  z-index: 100;
+}
+.nav-lang-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 7px;
+  background: none;
+  color: var(--color-text-muted);
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.12s;
+}
+.nav-lang-option:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+}
+.nav-lang-active {
+  color: white;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* Dropdown transition */
+.dropdown-enter-active { transition: all 0.15s ease; }
+.dropdown-leave-active { transition: all 0.1s ease; }
+.dropdown-enter-from, .dropdown-leave-to {
+  opacity: 0;
+  transform: translateY(-4px) scale(0.97);
 }
 
 /* CTA button */

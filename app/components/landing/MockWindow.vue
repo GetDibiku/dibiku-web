@@ -6,7 +6,7 @@
       <span class="w-3 h-3 rounded-full bg-[#ffbd2e]" />
       <span class="w-3 h-3 rounded-full bg-[#28c840]" />
       <span class="flex-1 text-center text-xs text-[var(--color-text-dim)]">
-        Dibiku — MySQL Local 3306 : bumilku
+        Dibiku - MySQL Local 3306 : bumilku
       </span>
     </div>
 

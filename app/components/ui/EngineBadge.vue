@@ -10,7 +10,7 @@
       {{ abbr }}
     </div>
     <span class="text-[#ccc]">{{ name }}</span>
-    <span v-if="soon" class="text-[10px] text-[var(--color-text-dim)]">soon</span>
+    <span v-if="soon" class="text-[10px] text-[var(--color-text-dim)]">{{ $t('engine.soon') }}</span>
   </div>
 </template>
 

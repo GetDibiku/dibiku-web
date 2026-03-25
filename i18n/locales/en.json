@@ -1,0 +1,327 @@
+{
+  "nav": {
+    "features": "Features",
+    "compare": "Compare",
+    "pricing": "Pricing",
+    "shortcuts": "Shortcuts",
+    "about": "About",
+    "download": "Download"
+  },
+  "hero": {
+    "badge": "Now in public beta",
+    "headline1": "Your database,",
+    "headline2": "without the bloat",
+    "subtitle": "A lightning-fast desktop client with multi-tab SQL editor, built-in SSH terminal & tunnels, virtual scrolling data grid, and 30+ keyboard shortcuts. MySQL, PostgreSQL, SQLite, and Redis - all in one app.",
+    "cta": "Download for macOS"
+  },
+  "whatsNew": {
+    "badge": "What's New",
+    "sshTitle": "SSH Tunnel & Terminal",
+    "sshDesc": "Tunnel DB connections + built-in shell",
+    "queryTabsTitle": "Multiple Query Tabs",
+    "queryTabsDesc": "Cmd+T to open, per-database scoping",
+    "testConnTitle": "Test Connection",
+    "testConnDesc": "Ping through SSH tunnel before saving",
+    "seeAll": "See all"
+  },
+  "stats": {
+    "engines": "DB engines",
+    "coldStart": "Cold start",
+    "scrollPerf": "Scroll perf",
+    "ramUsage": "RAM usage"
+  },
+  "features": {
+    "badge": "Why Dibiku",
+    "headline1": "Everything you need,",
+    "headline2": "nothing you don't",
+    "subtitle": "No bloat. No waiting around. A fast, native app that launches instantly and stays out of your way.",
+    "new": "NEW",
+    "hoodBadge": "Under the hood",
+    "hoodHeadline1": "Packed with power,",
+    "hoodHeadline2": "designed for speed",
+    "hoodSubtitle": "Every detail crafted to keep you in the flow.",
+    "hoodFeatures": "Features",
+    "hoodShortcuts": "Shortcuts",
+    "hoodEngines": "Engines",
+    "hoodExportFormats": "Export formats",
+    "features": "features",
+    "cards": {
+      "sqlEditor": {
+        "title": "Pro-grade SQL editor",
+        "desc": "Multiple query tabs per database, schema-aware autocomplete, multi-statement execution, SQL formatter, query variables with :placeholders, EXPLAIN visualizer, and saved snippets per engine.",
+        "stat": "Full",
+        "statLabel": "SQL IDE built in",
+        "highlights": ["Multi-tab queries", "Autocomplete", "EXPLAIN", "Snippets"]
+      },
+      "dataGrid": {
+        "title": "Blazing-fast data grid",
+        "desc": "Virtual-scrolled grid that renders millions of rows at 60fps. Inline editing, drag-to-select, sticky columns, column stats, row comparison, and copy-paste.",
+        "stat": "60",
+        "statLabel": "fps with 100K+ rows",
+        "highlights": ["Virtual scroll", "Inline edit", "Drag select", "Stats"]
+      },
+      "ssh": {
+        "title": "SSH tunnel & terminal",
+        "desc": "Connect to remote databases through SSH tunnels with password or key auth. Plus a built-in SSH terminal - multi-tab sessions, keepalive, auto-reconnect, and saved credentials.",
+        "stat": "Built-in",
+        "statLabel": "SSH terminal",
+        "highlights": ["SSH tunnel", "SSH terminal", "Key auth", "Multi-tab"]
+      },
+      "security": {
+        "title": "Secure by default",
+        "desc": "OS keychain credential storage, SSL/TLS with custom certificates, built-in data masking to auto-hide PII columns like email and passwords. Zero passwords on disk.",
+        "stat": "Zero",
+        "statLabel": "passwords on disk",
+        "highlights": ["OS keychain", "SSL/TLS", "Data masking", "Read-only mode"]
+      },
+      "keyboard": {
+        "title": "Keyboard-first workflow",
+        "desc": "36 keyboard shortcuts, command palette, multi-connection tabs, query tabs with Cmd+T/W, session restore - hands never leave the keyboard.",
+        "stat": "36",
+        "statLabel": "shortcuts",
+        "highlights": ["Cmd+P palette", "Tab restore", "Quick switch"]
+      },
+      "engines": {
+        "title": "4 engines, one app",
+        "desc": "MySQL, PostgreSQL, SQLite, and Redis with unified UI. Schema diff, foreign key viewer, and engine-specific query support built in.",
+        "stat": "4",
+        "statLabel": "engines",
+        "highlights": ["MySQL", "PostgreSQL", "SQLite", "Redis"]
+      },
+      "export": {
+        "title": "Import & export everything",
+        "desc": "Export to CSV, JSON, SQL. Import CSV with column mapping. Copy rows as PHP, Python, Go, Ruby, YAML. Full database backup & restore.",
+        "stat": "6+",
+        "statLabel": "export formats",
+        "highlights": ["CSV", "JSON", "SQL", "Code copy"]
+      },
+      "metrics": {
+        "title": "Metrics Board",
+        "desc": "Write SQL, pick a chart type, and see live visualizations on a dashboard. Multiple layouts, full-screen detail view, and export to PDF - your data, always up to date.",
+        "stat": "5",
+        "statLabel": "chart types",
+        "highlights": ["5 chart types", "PDF export", "Auto-refresh", "4 layouts"]
+      }
+    },
+    "hood": {
+      "sqlEditor": {
+        "title": "SQL Editor",
+        "desc": "A full IDE-grade editor right in your database client",
+        "items": [
+          "Full syntax highlighting & IntelliSense",
+          "Schema-aware autocomplete",
+          "Multiple query tabs per database (Cmd+T)",
+          "Multi-statement execution with result tabs",
+          "SQL formatter (Cmd+Shift+F)",
+          "Query variables - :user_id placeholders",
+          "EXPLAIN query visualizer",
+          "Saved queries & query history",
+          "Query snippets per engine",
+          "Tab state persisted across sessions"
+        ]
+      },
+      "dataGrid": {
+        "title": "Data Grid",
+        "desc": "Spreadsheet-like editing for your database",
+        "items": [
+          "Virtual scrolling - millions of rows",
+          "Click-to-edit inline cells",
+          "Column sort, resize & reorder",
+          "Sticky first column",
+          "Multi-row select & drag-to-select",
+          "Server-side pagination",
+          "Search with match highlighting",
+          "Cmd+C copy / Cmd+V paste rows"
+        ]
+      },
+      "dbTools": {
+        "title": "Database Tools",
+        "desc": "Everything you need to manage your database",
+        "items": [
+          "Schema diff between connections",
+          "Data masking for sensitive columns",
+          "Foreign key viewer & navigation",
+          "Column statistics on right-click",
+          "Row comparison (select 2 rows)",
+          "Backup & restore (.sql)",
+          "Slow query warning with EXPLAIN",
+          "Create / duplicate / drop tables",
+          "Metrics Board - SQL-powered charts",
+          "Auto-refresh dashboard cards",
+          "Full-screen chart detail with data table",
+          "Export charts as PDF"
+        ]
+      },
+      "importExport": {
+        "title": "Import & Export",
+        "desc": "Move data in and out effortlessly",
+        "items": [
+          "Export as CSV, JSON, SQL or PDF",
+          "Import from CSV with column mapping",
+          "Copy rows as PHP, Python, Go, Ruby, YAML",
+          "Copy CREATE TABLE statements",
+          "Export full table via right-click",
+          "Connection import/export"
+        ]
+      },
+      "connections": {
+        "title": "SSH & Connections",
+        "desc": "Connect securely to any database, anywhere - with built-in SSH",
+        "items": [
+          "SSH tunnel for MySQL, PostgreSQL, Redis",
+          "Built-in SSH terminal (xterm.js)",
+          "Multi-tab SSH sessions",
+          "Password and key-based auth",
+          "SSH keepalive & auto-reconnect",
+          "Save SSH sessions with grouping & color",
+          "Test connection (ping) before saving",
+          "SSL/TLS with custom certificates",
+          "OS keychain credential storage",
+          "Multi-connection tabs with session restore",
+          "Connection grouping with drag-drop",
+          "Connection color coding"
+        ]
+      },
+      "experience": {
+        "title": "Experience",
+        "desc": "Polished to the last pixel",
+        "items": [
+          "36 keyboard shortcuts",
+          "Command palette (Cmd+P)",
+          "Dark & light themes",
+          "Pin favorite tables to top",
+          "Auto-update with progress",
+          "First-run onboarding",
+          "OS notifications for long queries",
+          "Reconnect on connection drop"
+        ]
+      }
+    }
+  },
+  "comparison": {
+    "headline": "Less is more",
+    "subtitle": "Full-featured doesn't mean heavy. Dibiku packs a multi-tab SQL editor, SSH terminal, data grid, metrics board, and more - while using a fraction of the resources.",
+    "memoryUsage": "Memory Usage",
+    "memoryNote": "Measured idle with one connection open",
+    "startupTime": "Startup Time",
+    "startupNote": "Cold start to query-ready",
+    "scrollPerf": "Scroll Performance",
+    "scrollNote": "Rendering 100K+ rows with virtual scroll",
+    "dibiku": "Dibiku",
+    "typical": "Typical alternatives",
+    "heavy": "Heavy clients",
+    "taglineBefore": "Engineered to be",
+    "fast": "fast, light, and native",
+    "taglineAfter": "- no hidden bloat eating your resources."
+  },
+  "pricing": {
+    "headline": "Free and open",
+    "subtitle": "Everything you need to work with your databases - no strings attached.",
+    "period": "forever",
+    "desc": "All features included - no limits, no account required",
+    "downloadFree": "Download Free"
+  },
+  "download": {
+    "headline": "Try it now - it's free",
+    "subtitle": "Download, install, and connect to your first database in under 30 seconds. No account required.",
+    "cta": "Download for macOS",
+    "note": "Works on both Apple Silicon and Intel Macs"
+  },
+  "footer": {
+    "tagline": "The fast, lightweight database client for MySQL, PostgreSQL, SQLite, and Redis.",
+    "product": "Product",
+    "resources": "Resources",
+    "copyright": "© 2026 Dibiku. All rights reserved."
+  },
+  "about": {
+    "badge": "About us",
+    "headline1": "Built for developers",
+    "headline2": "who value their time",
+    "intro": "Dibiku is an independent, bootstrapped project - built by a solo developer who got tired of slow, bloated database tools.",
+    "storyTitle": "The story",
+    "storyP1": "Every database client I tried felt like it was fighting me - heavy apps eating 1GB of RAM, 10-second startup times, clunky UIs that need a mouse for everything. I wanted something that starts instantly, stays lightweight, and lets me work with my keyboard.",
+    "storyP2": "So I built Dibiku. A native desktop app that connects to MySQL, PostgreSQL, SQLite, and Redis - with a built-in SSH terminal, multi-tab SQL editor, virtual-scrolled data grid, and 36+ keyboard shortcuts. All in under 80MB of memory.",
+    "principlesTitle": "Principles",
+    "speed": "Speed is a feature",
+    "speedDesc": "Under 2 seconds to start. 60fps scrolling through 100K rows. Every interaction should feel instant.",
+    "keyboardFirst": "Keyboard first",
+    "keyboardFirstDesc": "36+ shortcuts so your hands never leave the keyboard. Cmd+T for new tab, Cmd+Enter to run, Cmd+K to switch databases.",
+    "noBloat": "No bloat",
+    "noBloatDesc": "~80MB RAM, no bundled browser engine, no telemetry, no account required. Just a tool that does its job.",
+    "secure": "Secure by design",
+    "secureDesc": "Credentials stay in your OS keychain. SSH tunnels for remote access. Data masking for sensitive columns. Zero passwords on disk.",
+    "contactTitle": "Get in touch",
+    "contactDesc": "Questions, feedback, or feature requests? I'd love to hear from you.",
+    "email": "Email"
+  },
+  "shortcuts": {
+    "title": "Keyboard Shortcuts",
+    "subtitle": "{count} shortcuts to keep your hands on the keyboard",
+    "tipsTitle": "Tips",
+    "tip1": "Press ⌘+? inside Dibiku to open the shortcuts cheat sheet.",
+    "tip2": "On Windows/Linux, replace ⌘ with Ctrl.",
+    "tip3": "Use ⌘+P to open the command palette for quick navigation.",
+    "general": "General",
+    "navigation": "Navigation",
+    "queryEditor": "Query Editor",
+    "dataGrid": "Data Grid",
+    "s": {
+      "commandPalette": "Command palette",
+      "switchDb": "Switch database",
+      "newConn": "New connection / Add row",
+      "closeTab": "Close tab",
+      "reopenTab": "Reopen closed tab",
+      "nextTab": "Next connection tab",
+      "toggleSidebar": "Toggle sidebar",
+      "openSettings": "Open settings",
+      "shortcutsSheet": "Shortcuts cheat sheet",
+      "closePanel": "Close panel / dialog",
+      "dataView": "Data view",
+      "structureView": "Structure view",
+      "queryEditorView": "Query editor",
+      "history": "History",
+      "metricsBoard": "Metrics board",
+      "savedQueries": "Saved queries panel",
+      "toggleQueryLog": "Toggle query log",
+      "filterSearch": "Filter / Grid search",
+      "refreshTable": "Refresh table data",
+      "executeQuery": "Execute query",
+      "executeSelected": "Execute selected text",
+      "runExplain": "Run EXPLAIN",
+      "querySnippets": "Query snippets",
+      "formatSql": "Format SQL",
+      "saveQuery": "Save query / Save edits",
+      "toggleComment": "Toggle comment",
+      "copyRows": "Copy selected rows",
+      "pasteRows": "Paste rows",
+      "copyInsert": "Copy as INSERT",
+      "exportCsv": "Export as CSV",
+      "selectAll": "Select all rows",
+      "undoEdit": "Undo cell edit",
+      "dupToEditor": "Duplicate query to editor",
+      "goToPage": "Go to page",
+      "clearHistory": "Clear history",
+      "navRows": "Navigate rows",
+      "editCell": "Edit cell",
+      "nextCell": "Next cell",
+      "deleteRows": "Delete selected rows"
+    }
+  },
+  "engine": {
+    "soon": "soon"
+  },
+  "seo": {
+    "aboutTitle": "About - Dibiku",
+    "aboutDesc": "About Dibiku - an independent, bootstrapped database client built by a solo developer. Fast, native, and keyboard-first.",
+    "featuresTitle": "Features - Dibiku",
+    "featuresDesc": "All Dibiku features - multi-tab SQL editor, built-in SSH terminal & tunnels, virtual data grid, inline editing, metrics board, data masking, and 36+ keyboard shortcuts.",
+    "compareTitle": "Compare - Dibiku vs Other Database Clients",
+    "compareDesc": "Compare Dibiku to other database clients - memory usage, startup time, scroll performance. Built-in SSH terminal, multi-tab queries, and native speed.",
+    "pricingTitle": "Pricing - Dibiku",
+    "pricingDesc": "Dibiku is free forever - all features included. SSH terminal & tunnels, multi-tab SQL editor, metrics board, and more. No account required.",
+    "downloadTitle": "Download - Dibiku",
+    "downloadDesc": "Download Dibiku for macOS. Free database client with SSH terminal, multi-tab SQL editor, and 4 database engines.",
+    "shortcutsTitle": "Keyboard Shortcuts - Dibiku",
+    "shortcutsDesc": "All 36+ keyboard shortcuts in Dibiku - Cmd+T for new query tab, Cmd+Enter to execute, Cmd+K for database picker, and more."
+  }
+}

@@ -1,0 +1,327 @@
+{
+  "nav": {
+    "features": "Fitur",
+    "compare": "Bandingkan",
+    "pricing": "Harga",
+    "shortcuts": "Pintasan",
+    "about": "Tentang",
+    "download": "Unduh"
+  },
+  "hero": {
+    "badge": "Sedang dalam beta publik",
+    "headline1": "Database kamu,",
+    "headline2": "tanpa bloat",
+    "subtitle": "Klien desktop super cepat dengan SQL editor multi-tab, SSH terminal & tunnel bawaan, data grid virtual scrolling, dan 30+ pintasan keyboard. MySQL, PostgreSQL, SQLite, dan Redis - semua dalam satu aplikasi.",
+    "cta": "Unduh untuk macOS"
+  },
+  "whatsNew": {
+    "badge": "Terbaru",
+    "sshTitle": "SSH Tunnel & Terminal",
+    "sshDesc": "Tunnel koneksi DB + shell bawaan",
+    "queryTabsTitle": "Multi Query Tab",
+    "queryTabsDesc": "Cmd+T untuk buka, per-database",
+    "testConnTitle": "Tes Koneksi",
+    "testConnDesc": "Ping melalui SSH tunnel sebelum simpan",
+    "seeAll": "Lihat semua"
+  },
+  "stats": {
+    "engines": "Engine DB",
+    "coldStart": "Cold start",
+    "scrollPerf": "Performa scroll",
+    "ramUsage": "Pemakaian RAM"
+  },
+  "features": {
+    "badge": "Mengapa Dibiku",
+    "headline1": "Semua yang kamu butuhkan,",
+    "headline2": "tanpa yang tidak perlu",
+    "subtitle": "Tanpa bloat. Tanpa menunggu lama. Aplikasi native yang cepat, langsung berjalan, dan tidak menghalangi kerja kamu.",
+    "new": "BARU",
+    "hoodBadge": "Di balik layar",
+    "hoodHeadline1": "Penuh fitur,",
+    "hoodHeadline2": "dirancang untuk kecepatan",
+    "hoodSubtitle": "Setiap detail dibuat agar kamu tetap fokus.",
+    "hoodFeatures": "Fitur",
+    "hoodShortcuts": "Pintasan",
+    "hoodEngines": "Engine",
+    "hoodExportFormats": "Format ekspor",
+    "features": "fitur",
+    "cards": {
+      "sqlEditor": {
+        "title": "SQL editor kelas pro",
+        "desc": "Multi query tab per database, autocomplete berbasis skema, eksekusi multi-statement, SQL formatter, variabel query dengan :placeholder, visualizer EXPLAIN, dan snippet tersimpan per engine.",
+        "stat": "Full",
+        "statLabel": "SQL IDE bawaan",
+        "highlights": ["Multi-tab query", "Autocomplete", "EXPLAIN", "Snippet"]
+      },
+      "dataGrid": {
+        "title": "Data grid super cepat",
+        "desc": "Grid dengan virtual scroll yang merender jutaan baris di 60fps. Editing inline, drag-to-select, kolom sticky, statistik kolom, perbandingan baris, dan copy-paste.",
+        "stat": "60",
+        "statLabel": "fps dengan 100K+ baris",
+        "highlights": ["Virtual scroll", "Edit inline", "Drag select", "Statistik"]
+      },
+      "ssh": {
+        "title": "SSH tunnel & terminal",
+        "desc": "Koneksi ke database remote via SSH tunnel dengan password atau key auth. Plus SSH terminal bawaan - multi-tab session, keepalive, auto-reconnect, dan kredensial tersimpan.",
+        "stat": "Bawaan",
+        "statLabel": "SSH terminal",
+        "highlights": ["SSH tunnel", "SSH terminal", "Key auth", "Multi-tab"]
+      },
+      "security": {
+        "title": "Aman secara default",
+        "desc": "Penyimpanan kredensial di keychain OS, SSL/TLS dengan sertifikat kustom, data masking bawaan untuk menyembunyikan kolom PII seperti email dan password. Nol password di disk.",
+        "stat": "Nol",
+        "statLabel": "password di disk",
+        "highlights": ["OS keychain", "SSL/TLS", "Data masking", "Mode read-only"]
+      },
+      "keyboard": {
+        "title": "Alur kerja keyboard-first",
+        "desc": "36 pintasan keyboard, command palette, tab multi-koneksi, query tab dengan Cmd+T/W, session restore - tangan tidak perlu meninggalkan keyboard.",
+        "stat": "36",
+        "statLabel": "pintasan",
+        "highlights": ["Cmd+P palette", "Tab restore", "Quick switch"]
+      },
+      "engines": {
+        "title": "4 engine, satu aplikasi",
+        "desc": "MySQL, PostgreSQL, SQLite, dan Redis dengan UI seragam. Schema diff, foreign key viewer, dan dukungan query per engine.",
+        "stat": "4",
+        "statLabel": "engine",
+        "highlights": ["MySQL", "PostgreSQL", "SQLite", "Redis"]
+      },
+      "export": {
+        "title": "Impor & ekspor semuanya",
+        "desc": "Ekspor ke CSV, JSON, SQL. Impor CSV dengan pemetaan kolom. Salin baris sebagai PHP, Python, Go, Ruby, YAML. Backup & restore database lengkap.",
+        "stat": "6+",
+        "statLabel": "format ekspor",
+        "highlights": ["CSV", "JSON", "SQL", "Salin kode"]
+      },
+      "metrics": {
+        "title": "Metrics Board",
+        "desc": "Tulis SQL, pilih tipe chart, dan lihat visualisasi langsung di dashboard. Multi layout, detail view full-screen, dan ekspor ke PDF - data kamu, selalu terbaru.",
+        "stat": "5",
+        "statLabel": "tipe chart",
+        "highlights": ["5 tipe chart", "Ekspor PDF", "Auto-refresh", "4 layout"]
+      }
+    },
+    "hood": {
+      "sqlEditor": {
+        "title": "SQL Editor",
+        "desc": "Editor kelas IDE langsung di klien database kamu",
+        "items": [
+          "Syntax highlighting & IntelliSense lengkap",
+          "Autocomplete berbasis skema",
+          "Multi query tab per database (Cmd+T)",
+          "Eksekusi multi-statement dengan tab hasil",
+          "SQL formatter (Cmd+Shift+F)",
+          "Variabel query - placeholder :user_id",
+          "Visualizer EXPLAIN query",
+          "Query tersimpan & riwayat query",
+          "Snippet query per engine",
+          "State tab tersimpan antar sesi"
+        ]
+      },
+      "dataGrid": {
+        "title": "Data Grid",
+        "desc": "Editing seperti spreadsheet untuk database kamu",
+        "items": [
+          "Virtual scrolling - jutaan baris",
+          "Klik untuk edit sel inline",
+          "Sortir, resize & reorder kolom",
+          "Kolom pertama sticky",
+          "Pilih multi-baris & drag-to-select",
+          "Paginasi server-side",
+          "Pencarian dengan highlight kecocokan",
+          "Cmd+C salin / Cmd+V tempel baris"
+        ]
+      },
+      "dbTools": {
+        "title": "Database Tools",
+        "desc": "Semua yang kamu butuhkan untuk mengelola database",
+        "items": [
+          "Schema diff antar koneksi",
+          "Data masking untuk kolom sensitif",
+          "Foreign key viewer & navigasi",
+          "Statistik kolom via klik kanan",
+          "Perbandingan baris (pilih 2 baris)",
+          "Backup & restore (.sql)",
+          "Peringatan slow query dengan EXPLAIN",
+          "Buat / duplikasi / hapus tabel",
+          "Metrics Board - chart berbasis SQL",
+          "Auto-refresh kartu dashboard",
+          "Detail chart full-screen dengan tabel data",
+          "Ekspor chart sebagai PDF"
+        ]
+      },
+      "importExport": {
+        "title": "Impor & Ekspor",
+        "desc": "Pindahkan data masuk dan keluar dengan mudah",
+        "items": [
+          "Ekspor sebagai CSV, JSON, SQL atau PDF",
+          "Impor dari CSV dengan pemetaan kolom",
+          "Salin baris sebagai PHP, Python, Go, Ruby, YAML",
+          "Salin statement CREATE TABLE",
+          "Ekspor tabel lengkap via klik kanan",
+          "Impor/ekspor koneksi"
+        ]
+      },
+      "connections": {
+        "title": "SSH & Koneksi",
+        "desc": "Koneksi aman ke database manapun - dengan SSH bawaan",
+        "items": [
+          "SSH tunnel untuk MySQL, PostgreSQL, Redis",
+          "SSH terminal bawaan (xterm.js)",
+          "Multi-tab sesi SSH",
+          "Auth password dan key",
+          "SSH keepalive & auto-reconnect",
+          "Simpan sesi SSH dengan grup & warna",
+          "Tes koneksi (ping) sebelum simpan",
+          "SSL/TLS dengan sertifikat kustom",
+          "Penyimpanan kredensial di keychain OS",
+          "Tab multi-koneksi dengan session restore",
+          "Pengelompokan koneksi dengan drag-drop",
+          "Kode warna koneksi"
+        ]
+      },
+      "experience": {
+        "title": "Pengalaman",
+        "desc": "Dipoles hingga piksel terakhir",
+        "items": [
+          "36 pintasan keyboard",
+          "Command palette (Cmd+P)",
+          "Tema gelap & terang",
+          "Pin tabel favorit ke atas",
+          "Auto-update dengan progress",
+          "Onboarding pertama kali",
+          "Notifikasi OS untuk query lama",
+          "Reconnect saat koneksi terputus"
+        ]
+      }
+    }
+  },
+  "comparison": {
+    "headline": "Lebih sedikit, lebih baik",
+    "subtitle": "Fitur lengkap bukan berarti berat. Dibiku memiliki SQL editor multi-tab, SSH terminal, data grid, metrics board, dan lainnya - dengan penggunaan resource yang minimal.",
+    "memoryUsage": "Pemakaian Memori",
+    "memoryNote": "Diukur saat idle dengan satu koneksi terbuka",
+    "startupTime": "Waktu Startup",
+    "startupNote": "Cold start sampai siap query",
+    "scrollPerf": "Performa Scroll",
+    "scrollNote": "Render 100K+ baris dengan virtual scroll",
+    "dibiku": "Dibiku",
+    "typical": "Alternatif umum",
+    "heavy": "Klien berat",
+    "taglineBefore": "Direkayasa untuk",
+    "fast": "cepat, ringan, dan native",
+    "taglineAfter": "- tanpa bloat tersembunyi yang memakan resource kamu."
+  },
+  "pricing": {
+    "headline": "Gratis dan terbuka",
+    "subtitle": "Semua yang kamu butuhkan untuk bekerja dengan database - tanpa syarat.",
+    "period": "selamanya",
+    "desc": "Semua fitur termasuk - tanpa batasan, tanpa perlu akun",
+    "downloadFree": "Unduh Gratis"
+  },
+  "download": {
+    "headline": "Coba sekarang - gratis",
+    "subtitle": "Unduh, instal, dan koneksi ke database pertamamu dalam waktu kurang dari 30 detik. Tanpa perlu akun.",
+    "cta": "Unduh untuk macOS",
+    "note": "Berjalan di Mac Apple Silicon maupun Intel"
+  },
+  "footer": {
+    "tagline": "Klien database cepat dan ringan untuk MySQL, PostgreSQL, SQLite, dan Redis.",
+    "product": "Produk",
+    "resources": "Sumber Daya",
+    "copyright": "© 2026 Dibiku. Hak cipta dilindungi."
+  },
+  "about": {
+    "badge": "Tentang kami",
+    "headline1": "Dibuat untuk developer",
+    "headline2": "yang menghargai waktu",
+    "intro": "Dibiku adalah proyek independen dan bootstrapped - dibuat oleh seorang developer yang lelah dengan tool database yang lambat dan berat.",
+    "storyTitle": "Ceritanya",
+    "storyP1": "Setiap klien database yang saya coba terasa melawan saya - aplikasi berat yang memakan 1GB RAM, waktu startup 10 detik, UI yang butuh mouse untuk semuanya. Saya ingin sesuatu yang langsung jalan, tetap ringan, dan bisa dipakai dengan keyboard.",
+    "storyP2": "Jadi saya buat Dibiku. Aplikasi desktop native yang terhubung ke MySQL, PostgreSQL, SQLite, dan Redis - dengan SSH terminal bawaan, SQL editor multi-tab, data grid virtual scroll, dan 36+ pintasan keyboard. Semuanya dalam memori kurang dari 80MB.",
+    "principlesTitle": "Prinsip",
+    "speed": "Kecepatan adalah fitur",
+    "speedDesc": "Startup kurang dari 2 detik. Scroll 60fps untuk 100K baris. Setiap interaksi harus terasa instan.",
+    "keyboardFirst": "Keyboard first",
+    "keyboardFirstDesc": "36+ pintasan agar tangan tidak pernah meninggalkan keyboard. Cmd+T untuk tab baru, Cmd+Enter untuk run, Cmd+K untuk ganti database.",
+    "noBloat": "Tanpa bloat",
+    "noBloatDesc": "~80MB RAM, tanpa browser engine, tanpa telemetri, tanpa perlu akun. Hanya tool yang melakukan tugasnya.",
+    "secure": "Aman sejak desain",
+    "secureDesc": "Kredensial tersimpan di keychain OS. SSH tunnel untuk akses remote. Data masking untuk kolom sensitif. Nol password di disk.",
+    "contactTitle": "Hubungi kami",
+    "contactDesc": "Pertanyaan, masukan, atau permintaan fitur? Saya senang mendengar dari kamu.",
+    "email": "Email"
+  },
+  "shortcuts": {
+    "title": "Pintasan Keyboard",
+    "subtitle": "{count} pintasan agar tangan tetap di keyboard",
+    "tipsTitle": "Tips",
+    "tip1": "Tekan ⌘+? di dalam Dibiku untuk membuka lembar contekan pintasan.",
+    "tip2": "Di Windows/Linux, ganti ⌘ dengan Ctrl.",
+    "tip3": "Gunakan ⌘+P untuk membuka command palette untuk navigasi cepat.",
+    "general": "Umum",
+    "navigation": "Navigasi",
+    "queryEditor": "Query Editor",
+    "dataGrid": "Data Grid",
+    "s": {
+      "commandPalette": "Command palette",
+      "switchDb": "Ganti database",
+      "newConn": "Koneksi baru / Tambah baris",
+      "closeTab": "Tutup tab",
+      "reopenTab": "Buka ulang tab tertutup",
+      "nextTab": "Tab koneksi berikutnya",
+      "toggleSidebar": "Toggle sidebar",
+      "openSettings": "Buka pengaturan",
+      "shortcutsSheet": "Lembar pintasan",
+      "closePanel": "Tutup panel / dialog",
+      "dataView": "Tampilan data",
+      "structureView": "Tampilan struktur",
+      "queryEditorView": "Query editor",
+      "history": "Riwayat",
+      "metricsBoard": "Metrics board",
+      "savedQueries": "Panel query tersimpan",
+      "toggleQueryLog": "Toggle log query",
+      "filterSearch": "Filter / Cari di grid",
+      "refreshTable": "Refresh data tabel",
+      "executeQuery": "Jalankan query",
+      "executeSelected": "Jalankan teks terpilih",
+      "runExplain": "Jalankan EXPLAIN",
+      "querySnippets": "Snippet query",
+      "formatSql": "Format SQL",
+      "saveQuery": "Simpan query / Simpan edit",
+      "toggleComment": "Toggle komentar",
+      "copyRows": "Salin baris terpilih",
+      "pasteRows": "Tempel baris",
+      "copyInsert": "Salin sebagai INSERT",
+      "exportCsv": "Ekspor sebagai CSV",
+      "selectAll": "Pilih semua baris",
+      "undoEdit": "Undo edit sel",
+      "dupToEditor": "Duplikasi query ke editor",
+      "goToPage": "Pergi ke halaman",
+      "clearHistory": "Hapus riwayat",
+      "navRows": "Navigasi baris",
+      "editCell": "Edit sel",
+      "nextCell": "Sel berikutnya",
+      "deleteRows": "Hapus baris terpilih"
+    }
+  },
+  "engine": {
+    "soon": "segera"
+  },
+  "seo": {
+    "aboutTitle": "Tentang - Dibiku",
+    "aboutDesc": "Tentang Dibiku - klien database independen dan bootstrapped yang dibuat oleh developer tunggal. Cepat, native, dan keyboard-first.",
+    "featuresTitle": "Fitur - Dibiku",
+    "featuresDesc": "Semua fitur Dibiku - SQL editor multi-tab, SSH terminal & tunnel bawaan, data grid virtual, editing inline, metrics board, data masking, dan 36+ pintasan keyboard.",
+    "compareTitle": "Bandingkan - Dibiku vs Klien Database Lain",
+    "compareDesc": "Bandingkan Dibiku dengan klien database lain - pemakaian memori, waktu startup, performa scroll. SSH terminal bawaan, query multi-tab, dan kecepatan native.",
+    "pricingTitle": "Harga - Dibiku",
+    "pricingDesc": "Dibiku gratis selamanya - semua fitur termasuk. SSH terminal & tunnel, SQL editor multi-tab, metrics board, dan lainnya. Tanpa perlu akun.",
+    "downloadTitle": "Unduh - Dibiku",
+    "downloadDesc": "Unduh Dibiku untuk macOS. Klien database gratis dengan SSH terminal, SQL editor multi-tab, dan 4 engine database.",
+    "shortcutsTitle": "Pintasan Keyboard - Dibiku",
+    "shortcutsDesc": "Semua 36+ pintasan keyboard di Dibiku - Cmd+T untuk tab query baru, Cmd+Enter untuk eksekusi, Cmd+K untuk pemilih database, dan lainnya."
+  }
+}
