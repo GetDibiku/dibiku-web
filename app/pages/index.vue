@@ -2,6 +2,7 @@
   <div class="min-h-screen">
     <Navbar />
     <Hero />
+    <WhatsNew />
     <StatsBar />
     <Features />
     <Comparison />
@@ -14,6 +15,7 @@
 <script setup lang="ts">
 import Navbar from '~/components/landing/Navbar.vue'
 import Hero from '~/components/landing/Hero.vue'
+import WhatsNew from '~/components/landing/WhatsNew.vue'
 import StatsBar from '~/components/landing/StatsBar.vue'
 import Features from '~/components/landing/Features.vue'
 import Comparison from '~/components/landing/Comparison.vue'

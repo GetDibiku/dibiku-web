@@ -21,8 +21,11 @@
         <div class="bento-glow" :style="{ background: `radial-gradient(ellipse at 20% 40%, ${FEATURES[0].gradient[0]}18, transparent 65%)` }" />
         <div class="relative flex flex-col md:flex-row items-start gap-8 md:gap-12 p-8 md:p-10">
           <div class="flex-1 min-w-0">
-            <div class="bento-icon" :style="iconBg(FEATURES[0])">
-              <FeatureIcon :name="FEATURES[0].icon" :color="FEATURES[0].gradient[0]" :size="24" />
+            <div class="flex items-center gap-3">
+              <div class="bento-icon" :style="iconBg(FEATURES[0])">
+                <FeatureIcon :name="FEATURES[0].icon" :color="FEATURES[0].gradient[0]" :size="24" />
+              </div>
+              <span v-if="FEATURES[0].isNew" class="new-badge">NEW</span>
             </div>
             <h3 class="text-[22px] font-bold text-white mb-2 mt-5">{{ FEATURES[0].title }}</h3>
             <p class="text-sm text-[var(--color-text-muted)] leading-relaxed max-w-[380px] mb-5">{{ FEATURES[0].desc }}</p>
@@ -53,8 +56,11 @@
         <div class="relative p-7">
           <!-- Top row: icon + stat -->
           <div class="flex items-start justify-between mb-5">
-            <div class="bento-icon" :style="iconBg(feature)">
-              <FeatureIcon :name="feature.icon" :color="feature.gradient[0]" :size="18" />
+            <div class="flex items-center gap-2.5">
+              <div class="bento-icon" :style="iconBg(feature)">
+                <FeatureIcon :name="feature.icon" :color="feature.gradient[0]" :size="18" />
+              </div>
+              <span v-if="feature.isNew" class="new-badge">NEW</span>
             </div>
             <div class="text-right">
               <span class="text-[26px] font-extrabold leading-none tracking-tight" :style="{ color: feature.gradient[0] }">{{ feature.stat }}</span>
@@ -164,7 +170,7 @@ function iconBg(feature: typeof FEATURES[number]) {
 }
 
 const HOOD_STATS = [
-  { value: '55+', label: 'Features' },
+  { value: '60+', label: 'Features' },
   { value: '36', label: 'Shortcuts' },
   { value: '4', label: 'Engines' },
   { value: '6+', label: 'Export formats' },
@@ -179,12 +185,14 @@ const DETAIL_CATEGORIES = [
     items: [
       'Full syntax highlighting & IntelliSense',
       'Schema-aware autocomplete',
-      'Multi-statement execution with tabs',
+      'Multiple query tabs per database (Cmd+T)',
+      'Multi-statement execution with result tabs',
       'SQL formatter (Cmd+Shift+F)',
       'Query variables — :user_id placeholders',
       'EXPLAIN query visualizer',
       'Saved queries & query history',
       'Query snippets per engine',
+      'Tab state persisted across sessions',
     ],
   },
   {
@@ -245,7 +253,8 @@ const DETAIL_CATEGORIES = [
     items: [
       'Multi-connection tabs',
       'Multi-database sidebar',
-      'SSH tunnel (password + key)',
+      'SSH tunnel with password or key auth',
+      'SSH key passphrase support',
       'SSL/TLS with custom certificates',
       'OS keychain credentials',
       'Connection grouping with drag-drop',
@@ -451,5 +460,24 @@ const DETAIL_CATEGORIES = [
 }
 .hood-stat:hover {
   border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* === New badge === */
+.new-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #fff;
+  background: linear-gradient(135deg, #059669, #4ec9b0);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  animation: badge-glow 2s ease-in-out infinite alternate;
+}
+@keyframes badge-glow {
+  from { box-shadow: 0 0 6px rgba(5, 150, 105, 0.3); }
+  to { box-shadow: 0 0 14px rgba(5, 150, 105, 0.5); }
 }
 </style>

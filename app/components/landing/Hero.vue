@@ -14,7 +14,7 @@
 
     <!-- Subtitle -->
     <p class="text-lg text-[var(--color-text-muted)] max-w-[560px] mx-auto mb-9 leading-relaxed">
-      A lightning-fast desktop client with a full SQL editor, virtual scrolling data grid, ERD viewer, and 30+ keyboard shortcuts. MySQL, PostgreSQL, SQLite, and Redis — all in one app.
+      A lightning-fast desktop client with multi-tab SQL editor, SSH tunnels, virtual scrolling data grid, ERD viewer, and 30+ keyboard shortcuts. MySQL, PostgreSQL, SQLite, and Redis — all in one app.
     </p>
 
     <!-- CTA Button -->
