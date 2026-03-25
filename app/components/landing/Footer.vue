@@ -5,7 +5,7 @@
         <!-- Brand -->
         <div>
           <NuxtLink :to="localePath('/')" class="flex items-center gap-2 no-underline mb-3">
-            <img src="/logo-icon.png" alt="Dibiku" class="w-7 h-7 rounded-md object-contain" />
+            <img src="/logo-icon.png" alt="" role="presentation" class="w-7 h-7 rounded-md object-contain" />
             <span class="text-white font-semibold">Dibiku</span>
           </NuxtLink>
           <p class="text-xs text-[var(--color-text-dim)] max-w-[240px] leading-relaxed">{{ $t('footer.tagline') }}</p>

@@ -73,7 +73,7 @@
 
           <!-- Highlight tags -->
           <div class="flex flex-wrap gap-1.5">
-            <span v-for="h in (featureCards[i + 1]?.highlights ?? [])" :key="h" class="bento-tag-sm" :style="{ color: feature.gradient[0] + 'cc' }">{{ h }}</span>
+            <span v-for="h in (featureCards[i + 1]?.highlights ?? [])" :key="h" class="bento-tag-sm" :style="{ color: feature.gradient[1] || feature.gradient[0] }">{{ h }}</span>
           </div>
         </div>
       </div>

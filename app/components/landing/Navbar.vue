@@ -3,7 +3,7 @@
     <div class="max-w-[1100px] mx-auto px-6 flex items-center justify-between" :style="{ height: scrolled ? '56px' : '64px', transition: 'height 0.3s' }">
       <!-- Logo -->
       <NuxtLink :to="localePath('/')" class="nav-logo">
-        <img src="/logo-icon.png" alt="Dibiku" class="nav-logo-icon" />
+        <img src="/logo-icon.png" alt="" role="presentation" class="nav-logo-icon" />
         <span class="nav-logo-text">Dibiku</span>
       </NuxtLink>
 
@@ -30,7 +30,7 @@
 
         <!-- Language dropdown -->
         <div class="relative ml-2">
-          <button @click="langOpen = !langOpen" class="nav-lang-btn" title="Language">
+          <button @click="langOpen = !langOpen" class="nav-lang-btn" title="Language" aria-label="Switch language">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
           </button>
           <Transition name="dropdown">

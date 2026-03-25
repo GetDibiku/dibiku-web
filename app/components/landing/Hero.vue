@@ -1,7 +1,7 @@
 <template>
   <section class="max-w-[1100px] mx-auto px-6 pt-24 pb-20 text-center" id="hero">
     <!-- Beta Badge -->
-    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--color-accent)]/10 border border-[var(--color-accent)]/20 text-sm text-[var(--color-accent)] mb-6">
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--color-accent)]/10 border border-[var(--color-accent)]/20 text-sm text-[#4da6e8] mb-6">
       <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-success)]" />
       {{ $t('hero.badge') }}
     </div>
