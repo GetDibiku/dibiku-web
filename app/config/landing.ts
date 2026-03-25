@@ -131,7 +131,7 @@ export const STATS = [
 ] as const
 
 export const DOWNLOAD_LINKS = {
-  macArm: '#',
+  macArm: 'https://github.com/GetDibiku/dibiku/releases/download/v0.3.0/Dibiku_0.3.0_aarch64.zip',
   macIntel: '#',
   windows: '#',
   linuxDeb: '#',
