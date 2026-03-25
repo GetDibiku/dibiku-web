@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen">
+  <main class="min-h-screen">
     <Navbar />
     <Hero />
     <WhatsNew />
@@ -9,7 +9,7 @@
     <Pricing />
     <DownloadCTA />
     <Footer />
-  </div>
+  </main>
 </template>
 
 <script setup lang="ts">

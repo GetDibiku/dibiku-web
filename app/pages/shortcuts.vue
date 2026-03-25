@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen">
+  <main class="min-h-screen">
     <Navbar />
 
     <div class="max-w-[800px] mx-auto px-6 pt-20 pb-24">
@@ -61,7 +61,7 @@
 
     <!-- Footer -->
     <Footer />
-  </div>
+  </main>
 </template>
 
 <script setup lang="ts">

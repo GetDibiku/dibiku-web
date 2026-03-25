@@ -1,12 +1,12 @@
 <template>
-  <div class="min-h-screen">
+  <main class="min-h-screen">
     <Navbar />
     <div class="pt-8">
       <Comparison />
     </div>
     <DownloadCTA />
     <Footer />
-  </div>
+  </main>
 </template>
 
 <script setup lang="ts">

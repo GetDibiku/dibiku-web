@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen">
+  <main class="min-h-screen">
     <Navbar />
 
     <!-- Header -->
@@ -333,7 +333,7 @@
 
     <!-- Footer -->
     <Footer />
-  </div>
+  </main>
 </template>
 
 <script setup lang="ts">
