@@ -38,7 +38,7 @@ useHead({
         offers: [
           { '@type': 'Offer', price: '0', priceCurrency: 'USD', name: 'Free' },
         ],
-        url: 'https://dibiku.id',
+        url: 'https://dibiku.com',
       }),
     },
   ],
