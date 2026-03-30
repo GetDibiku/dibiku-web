@@ -225,7 +225,11 @@
     "headline": "Try it now - it's free",
     "subtitle": "Download, install, and connect to your first database in under 30 seconds. No account required.",
     "cta": "Download for macOS",
-    "note": "Works on both Apple Silicon and Intel Macs"
+    "note": "Works on both Apple Silicon and Intel Macs",
+    "macWarningTitle": "First time opening?",
+    "macWarningText": "If macOS says the app \"is damaged\", open Terminal and run:",
+    "macWarningCmd": "xattr -cr /Applications/Dibiku.app",
+    "macWarningNote": "This removes the download quarantine flag. Required for apps not yet notarized by Apple."
   },
   "footer": {
     "tagline": "The fast, lightweight database client for MySQL, PostgreSQL, SQLite, and Redis.",

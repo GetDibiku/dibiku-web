@@ -225,7 +225,11 @@
     "headline": "Coba sekarang - gratis",
     "subtitle": "Unduh, instal, dan koneksi ke database pertamamu dalam waktu kurang dari 30 detik. Tanpa perlu akun.",
     "cta": "Unduh untuk macOS",
-    "note": "Berjalan di Mac Apple Silicon maupun Intel"
+    "note": "Berjalan di Mac Apple Silicon maupun Intel",
+    "macWarningTitle": "Pertama kali membuka?",
+    "macWarningText": "Jika macOS menampilkan pesan \"is damaged\", buka Terminal dan jalankan:",
+    "macWarningCmd": "xattr -cr /Applications/Dibiku.app",
+    "macWarningNote": "Perintah ini menghapus flag karantina download. Diperlukan untuk aplikasi yang belum dinotarisasi oleh Apple."
   },
   "footer": {
     "tagline": "Klien database cepat dan ringan untuk MySQL, PostgreSQL, SQLite, dan Redis.",

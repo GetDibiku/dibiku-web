@@ -18,6 +18,14 @@
       </a>
     </div>
     <p class="text-xs text-[var(--color-text-dim)] mt-3">{{ $t('download.note') }}</p>
+
+    <!-- macOS install note -->
+    <div class="mt-8 max-w-[480px] mx-auto text-left bg-white/[0.03] border border-white/[0.06] rounded-lg px-5 py-4">
+      <p class="text-xs font-semibold text-[var(--color-text-muted)] mb-2">{{ $t('download.macWarningTitle') }}</p>
+      <p class="text-xs text-[var(--color-text-dim)] mb-2">{{ $t('download.macWarningText') }}</p>
+      <code class="block text-xs bg-black/30 text-[#4ec9b0] rounded px-3 py-2 font-mono select-all">{{ $t('download.macWarningCmd') }}</code>
+      <p class="text-[10px] text-[var(--color-text-dim)] mt-2 opacity-70">{{ $t('download.macWarningNote') }}</p>
+    </div>
   </section>
 </template>
 
