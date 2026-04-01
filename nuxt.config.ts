@@ -4,7 +4,19 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: false },
 
-  modules: ['@nuxtjs/i18n'],
+  modules: ['@nuxtjs/i18n', '@nuxtjs/sitemap'],
+
+  site: {
+    url: 'https://dibiku.com',
+    name: 'Dibiku',
+  },
+
+  sitemap: {
+    xslColumns: [
+      { label: 'URL', width: '65%' },
+      { label: 'Last Modified', width: '25%' },
+    ],
+  },
 
   i18n: {
     locales: [

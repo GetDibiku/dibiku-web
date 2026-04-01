@@ -344,6 +344,25 @@ useHead({
   title: 'Changelog - Dibiku',
   meta: [
     { name: 'description', content: 'What\'s new in Dibiku - SSH terminal & tunnels, multiple query tabs, metrics board, and more. Version history for the fast database client.' },
+    { property: 'og:title', content: 'Changelog - Dibiku' },
+    { property: 'og:description', content: 'What\'s new in Dibiku - SSH terminal & tunnels, multiple query tabs, metrics board, and more. Version history for the fast database client.' },
+    { property: 'og:url', content: 'https://dibiku.com/changelog' },
+  ],
+  link: [
+    { rel: 'canonical', href: 'https://dibiku.com/changelog' },
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://dibiku.com' },
+          { '@type': 'ListItem', position: 2, name: 'Changelog', item: 'https://dibiku.com/changelog' },
+        ],
+      }),
+    },
   ],
 })
 

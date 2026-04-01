@@ -68,13 +68,34 @@
 import Navbar from '~/components/landing/Navbar.vue'
 import Footer from '~/components/landing/Footer.vue'
 
-const { t } = useI18n()
+const { t, locale } = useI18n()
 const localePath = useLocalePath()
+const baseUrl = 'https://dibiku.com'
+const canonicalUrl = computed(() => locale.value === 'en' ? `${baseUrl}/shortcuts` : `${baseUrl}/id/shortcuts`)
 
 useHead({
   title: computed(() => t('seo.shortcutsTitle')),
   meta: [
     { name: 'description', content: computed(() => t('seo.shortcutsDesc')) },
+    { property: 'og:title', content: computed(() => t('seo.shortcutsTitle')) },
+    { property: 'og:description', content: computed(() => t('seo.shortcutsDesc')) },
+    { property: 'og:url', content: canonicalUrl },
+  ],
+  link: [
+    { rel: 'canonical', href: canonicalUrl },
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://dibiku.com' },
+          { '@type': 'ListItem', position: 2, name: 'Keyboard Shortcuts', item: 'https://dibiku.com/shortcuts' },
+        ],
+      }),
+    },
   ],
 })
 

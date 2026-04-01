@@ -23,7 +23,19 @@ import Pricing from '~/components/landing/Pricing.vue'
 import DownloadCTA from '~/components/landing/DownloadCTA.vue'
 import Footer from '~/components/landing/Footer.vue'
 
+const { locale } = useI18n()
+const baseUrl = 'https://dibiku.com'
+const canonicalUrl = computed(() => locale.value === 'en' ? baseUrl : `${baseUrl}/id`)
+
 useHead({
+  meta: [
+    { property: 'og:title', content: 'Dibiku - Fast database client with SSH terminal & SQL editor' },
+    { property: 'og:description', content: 'Connect to MySQL, PostgreSQL, Redis, and SQLite from one blazing fast desktop app. Built-in SSH terminal & tunnels, multi-tab SQL editor, and 36+ shortcuts.' },
+    { property: 'og:url', content: canonicalUrl },
+  ],
+  link: [
+    { rel: 'canonical', href: canonicalUrl },
+  ],
   script: [
     {
       type: 'application/ld+json',
@@ -38,6 +50,7 @@ useHead({
         offers: [
           { '@type': 'Offer', price: '0', priceCurrency: 'USD', name: 'Free' },
         ],
+        screenshot: 'https://dibiku.com/og-image.png',
         url: 'https://dibiku.com',
       }),
     },
