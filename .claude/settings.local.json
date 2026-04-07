@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xargs ls:*)",
+      "Bash(find:*)",
+      "Bash(grep -E \"\\\\.vue$\")",
+      "Bash(npx nuxi:*)"
+    ]
+  }
+}

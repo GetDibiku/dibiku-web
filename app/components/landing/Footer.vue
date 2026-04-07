@@ -25,6 +25,7 @@
           <div>
             <div class="text-[10px] uppercase tracking-wider text-[var(--color-text-faint)] font-medium mb-3">{{ $t('footer.resources') }}</div>
             <div class="flex flex-col gap-2 text-sm">
+              <NuxtLink :to="localePath('/changelog')" class="text-[var(--color-text-muted)] hover:text-white transition-colors no-underline">{{ $t('nav.changelog') }}</NuxtLink>
               <NuxtLink :to="localePath('/shortcuts')" class="text-[var(--color-text-muted)] hover:text-white transition-colors no-underline">{{ $t('nav.shortcuts') }}</NuxtLink>
               <NuxtLink :to="localePath('/about')" class="text-[var(--color-text-muted)] hover:text-white transition-colors no-underline">{{ $t('nav.about') }}</NuxtLink>
             </div>

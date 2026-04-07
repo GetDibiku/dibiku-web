@@ -16,6 +16,16 @@ export default defineNuxtConfig({
       { label: 'URL', width: '65%' },
       { label: 'Last Modified', width: '25%' },
     ],
+    urls: [
+      { loc: '/', priority: 1.0, changefreq: 'weekly' },
+      { loc: '/features', priority: 0.9, changefreq: 'monthly' },
+      { loc: '/compare', priority: 0.8, changefreq: 'monthly' },
+      { loc: '/pricing', priority: 0.9, changefreq: 'monthly' },
+      { loc: '/download', priority: 0.9, changefreq: 'weekly' },
+      { loc: '/changelog', priority: 0.8, changefreq: 'weekly' },
+      { loc: '/shortcuts', priority: 0.7, changefreq: 'monthly' },
+      { loc: '/about', priority: 0.6, changefreq: 'monthly' },
+    ],
   },
 
   i18n: {
@@ -26,11 +36,7 @@ export default defineNuxtConfig({
     defaultLocale: 'en',
     strategy: 'prefix_except_default',
     langDir: '../i18n/locales/',
-    detectBrowserLanguage: {
-      useCookie: true,
-      cookieKey: 'i18n_lang',
-      redirectOn: 'root',
-    },
+    detectBrowserLanguage: false,
     baseUrl: 'https://dibiku.com',
   },
 

@@ -340,16 +340,20 @@
 import Navbar from '~/components/landing/Navbar.vue'
 import Footer from '~/components/landing/Footer.vue'
 
+const { locale } = useI18n()
+const baseUrl = 'https://dibiku.com'
+const canonicalUrl = computed(() => locale.value === 'en' ? `${baseUrl}/changelog` : `${baseUrl}/id/changelog`)
+
 useHead({
   title: 'Changelog - Dibiku',
   meta: [
     { name: 'description', content: 'What\'s new in Dibiku - SSH terminal & tunnels, multiple query tabs, metrics board, and more. Version history for the fast database client.' },
     { property: 'og:title', content: 'Changelog - Dibiku' },
     { property: 'og:description', content: 'What\'s new in Dibiku - SSH terminal & tunnels, multiple query tabs, metrics board, and more. Version history for the fast database client.' },
-    { property: 'og:url', content: 'https://dibiku.com/changelog' },
+    { property: 'og:url', content: canonicalUrl },
   ],
   link: [
-    { rel: 'canonical', href: 'https://dibiku.com/changelog' },
+    { rel: 'canonical', href: canonicalUrl },
   ],
   script: [
     {

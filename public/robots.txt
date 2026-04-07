@@ -1,3 +1,5 @@
 User-agent: *
 Allow: /
+
+Host: https://dibiku.com
 Sitemap: https://dibiku.com/sitemap.xml
